@@ -69,7 +69,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(230, 113, 46, 14);
+		lblPassword.setBounds(230, 113, 65, 14);
 		frmUstore.getContentPane().add(lblPassword);
 		
 		JLabel lblUstore = new JLabel("uStore");

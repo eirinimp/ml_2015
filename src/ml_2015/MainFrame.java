@@ -51,7 +51,7 @@ public class MainFrame {
 		JButton btnNewButton_1 = new JButton("New button");
 		panel.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("New bu");
+		JButton btnNewButton_2 = new JButton("New button");
 		frame.getContentPane().add(btnNewButton_2, BorderLayout.WEST);
 	}
 

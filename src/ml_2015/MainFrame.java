@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class MainFrame {
 
@@ -53,13 +54,11 @@ public class MainFrame {
 		frmUstore.getContentPane().setLayout(null);
 		
 		txtUsername = new JTextField();
-		txtUsername.setText("username");
 		txtUsername.setBounds(305, 79, 86, 20);
 		frmUstore.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 		
 		txtPassword = new JTextField();
-		txtPassword.setText("password");
 		txtPassword.setBounds(305, 110, 86, 20);
 		frmUstore.getContentPane().add(txtPassword);
 		txtPassword.setColumns(10);
@@ -82,5 +81,13 @@ public class MainFrame {
 		btnLogIn.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnLogIn.setBounds(305, 151, 89, 23);
 		frmUstore.getContentPane().add(btnLogIn);
+		
+		JLabel lblCopyrightsUstoreAe = new JLabel("Copyright uStore A.E. 2015");
+		lblCopyrightsUstoreAe.setBackground(Color.DARK_GRAY);
+		lblCopyrightsUstoreAe.setHorizontalTextPosition(SwingConstants.LEFT);
+		lblCopyrightsUstoreAe.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCopyrightsUstoreAe.setFont(new Font("Arial", Font.PLAIN, 10));
+		lblCopyrightsUstoreAe.setBounds(0, 247, 434, 14);
+		frmUstore.getContentPane().add(lblCopyrightsUstoreAe);
 	}
 }

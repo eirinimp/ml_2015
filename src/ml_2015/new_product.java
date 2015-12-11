@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.JSeparator;
 
 public class new_product {
 
@@ -56,15 +57,6 @@ public class new_product {
 		frmUstore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUstore.getContentPane().setLayout(null);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 434, 21);
-		frmUstore.getContentPane().add(menuBar);
-		
-		JButton button = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
-		button.setMaximumSize(new Dimension(20, 20));
-		button.setFont(new Font("Arial", Font.PLAIN, 10));
-		menuBar.add(button);
-		
 		JLabel label = new JLabel("Copyright uStore A.E. 2015");
 		label.setHorizontalTextPosition(SwingConstants.LEFT);
 		label.setHorizontalAlignment(SwingConstants.LEFT);
@@ -77,7 +69,7 @@ public class new_product {
 		lblNewLabel.setBackground(Color.DARK_GRAY);
 		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 15));
-		lblNewLabel.setBounds(0, 25, 434, 14);
+		lblNewLabel.setBounds(0, 25, 434, 15);
 		frmUstore.getContentPane().add(lblNewLabel);
 		
 		JLabel label_1 = new JLabel("\u03A4\u03AF\u03C4\u03BB\u03BF\u03C2");
@@ -133,6 +125,40 @@ public class new_product {
 		textField_5.setColumns(10);
 		textField_5.setBounds(220, 210, 100, 20);
 		frmUstore.getContentPane().add(textField_5);
+		
+		JButton button = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		button.setBounds(0, 0, 20, 20);
+		frmUstore.getContentPane().add(button);
+		button.setMaximumSize(new Dimension(20, 20));
+		button.setFont(new Font("Arial", Font.PLAIN, 10));
+		
+		JButton button_1 = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		button_1.setMaximumSize(new Dimension(20, 20));
+		button_1.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_1.setBounds(414, 0, 20, 20);
+		frmUstore.getContentPane().add(button_1);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 21, 434, 7);
+		frmUstore.getContentPane().add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(0, 42, 434, 7);
+		frmUstore.getContentPane().add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(0, 245, 434, 7);
+		frmUstore.getContentPane().add(separator_2);
+		
+		JLabel label_6 = new JLabel("\u03A7\u03C1\u03AE\u03C3\u03C4\u03B7\u03C2");
+		label_6.setBounds(325, 3, 80, 15);
+		frmUstore.getContentPane().add(label_6);
+		
+		JButton button_2 = new JButton("\u03A0\u03AF\u03C3\u03C9");
+		button_2.setMaximumSize(new Dimension(20, 20));
+		button_2.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_2.setBounds(21, 0, 20, 20);
+		frmUstore.getContentPane().add(button_2);
 	}
 
 }

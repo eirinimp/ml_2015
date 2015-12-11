@@ -16,6 +16,9 @@ import javax.swing.JMenuBar;
 import java.awt.Dimension;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import java.awt.Point;
+import java.awt.Panel;
+import javax.swing.JSeparator;
 
 public class diax {
 
@@ -80,15 +83,6 @@ public class diax {
 		lblNewLabel.setBounds(10, 171, 70, 70);
 		frmUstore.getContentPane().add(lblNewLabel);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 434, 21);
-		frmUstore.getContentPane().add(menuBar);
-		
-		JButton btnNewButton = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
-		btnNewButton.setMaximumSize(new Dimension(20, 20));
-		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 10));
-		menuBar.add(btnNewButton);
-		
 		JLabel label = new JLabel("Copyright uStore A.E. 2015");
 		label.setHorizontalTextPosition(SwingConstants.LEFT);
 		label.setHorizontalAlignment(SwingConstants.LEFT);
@@ -116,6 +110,34 @@ public class diax {
 		label_4.setFont(new Font("Arial", Font.PLAIN, 10));
 		label_4.setBounds(350, 171, 70, 70);
 		frmUstore.getContentPane().add(label_4);
+		
+		JButton btnNewButton = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		btnNewButton.setBounds(0, 0, 20, 20);
+		frmUstore.getContentPane().add(btnNewButton);
+		btnNewButton.setMaximumSize(new Dimension(20, 20));
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 10));
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 21, 434, 7);
+		frmUstore.getContentPane().add(separator);
+		
+		JButton button_5 = new JButton("\u0391\u03C0\u03BF\u03C3\u03CD\u03BD\u03B4\u03B5\u03C3\u03B7");
+		button_5.setMaximumSize(new Dimension(20, 20));
+		button_5.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_5.setBounds(414, 0, 20, 20);
+		frmUstore.getContentPane().add(button_5);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u0394\u03B9\u03B1\u03C7\u03B5\u03B9\u03C1\u03B9\u03C3\u03C4\u03AE\u03C2");
+		lblNewLabel_1.setBounds(325, 3, 80, 15);
+		frmUstore.getContentPane().add(lblNewLabel_1);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(10, 247, 1, 2);
+		frmUstore.getContentPane().add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setBounds(0, 245, 434, 7);
+		frmUstore.getContentPane().add(separator_2);
 		
 	}
 }

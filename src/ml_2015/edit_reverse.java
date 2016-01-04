@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 
 public class edit_reverse {
 
-	private JFrame frame;
+	private JFrame frmUstore;
 
 	/**
 	 * Launch the application.
@@ -23,7 +23,8 @@ public class edit_reverse {
 			public void run() {
 				try {
 					edit_reverse window = new edit_reverse();
-					window.frame.setVisible(true);
+					window.frmUstore.setVisible(true);
+					window.frmUstore.setSize(1200,600);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -42,59 +43,65 @@ public class edit_reverse {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmUstore = new JFrame();
+		frmUstore.setFont(new Font("Arial", Font.PLAIN, 15));
+		frmUstore.setTitle("uStore");
+		frmUstore.setBounds(100, 100, 450, 300);
+		frmUstore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmUstore.getContentPane().setLayout(null);
 		
-		JButton button = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
-		button.setMaximumSize(new Dimension(20, 20));
-		button.setFont(new Font("Arial", Font.PLAIN, 10));
-		button.setBounds(0, 0, 20, 20);
-		frame.getContentPane().add(button);
+		JButton button_01 = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		button_01.setBackground(Color.WHITE);
+		button_01.setBounds(0, 0, 50, 50);
+		frmUstore.getContentPane().add(button_01);
+		button_01.setMaximumSize(new Dimension(20, 20));
+		button_01.setFont(new Font("Arial", Font.PLAIN, 10));
 		
-		JButton button_1 = new JButton("\u03A0\u03AF\u03C3\u03C9");
-		button_1.setMaximumSize(new Dimension(20, 20));
-		button_1.setFont(new Font("Arial", Font.PLAIN, 10));
-		button_1.setBounds(21, 0, 20, 20);
-		frame.getContentPane().add(button_1);
+		JButton button_02 = new JButton("\u03A0\u03AF\u03C3\u03C9");
+		button_02.setBackground(Color.WHITE);
+		button_02.setMaximumSize(new Dimension(20, 20));
+		button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_02.setBounds(51, 0, 50, 50);
+		frmUstore.getContentPane().add(button_02);
 		
-		JButton button_2 = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
-		button_2.setMaximumSize(new Dimension(20, 20));
-		button_2.setFont(new Font("Arial", Font.PLAIN, 10));
-		button_2.setBounds(414, 0, 20, 20);
-		frame.getContentPane().add(button_2);
+		JLabel label_0 = new JLabel("\u03A7\u03C1\u03AE\u03C3\u03C4\u03B7\u03C2");
+		label_0.setFont(new Font("Arial", Font.BOLD, 12));
+		label_0.setBounds(1050, 20, 80, 15);
+		frmUstore.getContentPane().add(label_0);
+		
+		JButton button_03 = new JButton("\u0391\u03C0\u03BF\u03C3\u03CD\u03BD\u03B4\u03B5\u03C3\u03B7");
+		button_03.setBackground(Color.WHITE);
+		button_03.setMaximumSize(new Dimension(20, 20));
+		button_03.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_03.setBounds(1134, 0, 50, 50);
+		frmUstore.getContentPane().add(button_03);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(0, 21, 434, 7);
-		frame.getContentPane().add(separator);
+		separator.setBounds(0, 51, 1200, 7);
+		frmUstore.getContentPane().add(separator);
 		
-		JLabel label = new JLabel("\u0395\u03A0\u0395\u039E\u0395\u03A1\u0393\u0391\u03A3\u0399\u0391 \u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
-		label.setForeground(Color.DARK_GRAY);
-		label.setFont(new Font("Arial", Font.PLAIN, 15));
-		label.setBackground(Color.DARK_GRAY);
-		label.setBounds(0, 25, 434, 15);
-		frame.getContentPane().add(label);
-		
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(0, 42, 434, 7);
-		frame.getContentPane().add(separator_1);
-		
-		JLabel label_1 = new JLabel("Copyright uStore A.E. 2015");
-		label_1.setHorizontalTextPosition(SwingConstants.LEFT);
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setFont(new Font("Arial", Font.PLAIN, 10));
-		label_1.setBackground(Color.DARK_GRAY);
-		label_1.setBounds(0, 247, 434, 14);
-		frame.getContentPane().add(label_1);
+		JLabel label_01 = new JLabel("\u0395\u03A0\u0395\u039E\u0395\u03A1\u0393\u0391\u03A3\u0399\u0391 \u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+		label_01.setBackground(Color.DARK_GRAY);
+		label_01.setForeground(Color.DARK_GRAY);
+		label_01.setFont(new Font("Arial", Font.PLAIN, 20));
+		label_01.setBounds(10, 55, 500, 25);
+		frmUstore.getContentPane().add(label_01);
 		
 		JSeparator separator_2 = new JSeparator();
-		separator_2.setBounds(0, 245, 434, 7);
-		frame.getContentPane().add(separator_2);
+		separator_2.setBounds(0, 85, 1200, 7);
+		frmUstore.getContentPane().add(separator_2);
 		
-		JLabel label_2 = new JLabel("\u03A7\u03C1\u03AE\u03C3\u03C4\u03B7\u03C2");
-		label_2.setBounds(325, 3, 80, 15);
-		frame.getContentPane().add(label_2);
+		JSeparator separator_3 = new JSeparator();
+		separator_3.setBounds(0, 540, 1200, 7);
+		frmUstore.getContentPane().add(separator_3);
+		
+		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
+		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
+		label_10.setHorizontalAlignment(SwingConstants.LEFT);
+		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
+		label_10.setBackground(Color.DARK_GRAY);
+		label_10.setBounds(10, 545, 434, 14);
+		frmUstore.getContentPane().add(label_10);
 	}
 
 }

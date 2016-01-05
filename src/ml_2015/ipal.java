@@ -17,6 +17,7 @@ import java.awt.Dimension;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
 
 public class ipal {
 
@@ -57,7 +58,8 @@ public class ipal {
 		frmUstore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUstore.getContentPane().setLayout(null);
 		
-		JButton button_01 = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		JButton button_01 = new JButton("");
+		button_01.setIcon(new ImageIcon("src\\icons\\home.png"));
 		button_01.setBackground(Color.WHITE);
 		button_01.setBounds(0, 0, 50, 50);
 		frmUstore.getContentPane().add(button_01);
@@ -69,7 +71,8 @@ public class ipal {
 		label_0.setBounds(1050, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
 		
-		JButton button_03 = new JButton("\u0391\u03C0\u03BF\u03C3\u03CD\u03BD\u03B4\u03B5\u03C3\u03B7");
+		JButton button_03 = new JButton("");
+		button_03.setIcon(new ImageIcon("src\\icons\\power.png"));
 		button_03.setBackground(Color.WHITE);
 		button_03.setMaximumSize(new Dimension(20, 20));
 		button_03.setFont(new Font("Arial", Font.PLAIN, 10));
@@ -81,18 +84,21 @@ public class ipal {
 		frmUstore.getContentPane().add(separator);
 		
 		JButton button_1 = new JButton("");
+		button_1.setIcon(new ImageIcon("src\\icons\\screen.png"));
 		button_1.setFont(new Font("Arial", Font.PLAIN, 11));
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(305, 180, 125, 125);
 		frmUstore.getContentPane().add(button_1);
 		
 		JButton button_2 = new JButton("");
+		button_2.setIcon(new ImageIcon("src\\icons\\edit.png"));
 		button_2.setFont(new Font("Arial", Font.PLAIN, 11));
 		button_2.setBackground(Color.WHITE);
 		button_2.setBounds(510, 180, 125, 125);
 		frmUstore.getContentPane().add(button_2);
 		
 		JButton button_3 = new JButton("");
+		button_3.setIcon(new ImageIcon("src\\icons\\search_1.png"));
 		button_3.setBackground(Color.WHITE);
 		button_3.setBounds(715, 180, 125, 125);
 		frmUstore.getContentPane().add(button_3);

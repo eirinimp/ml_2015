@@ -76,7 +76,7 @@ public class diax {
 		frmUstore.getContentPane().add(label_0);
 		
 		JButton button_03 = new JButton("");
-		button_03.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\power.png"));
+		button_03.setIcon(new ImageIcon("src\\icons\\power.png"));
 		button_03.setBackground(Color.WHITE);
 		button_03.setMaximumSize(new Dimension(20, 20));
 		button_03.setFont(new Font("Arial", Font.PLAIN, 10));
@@ -88,31 +88,31 @@ public class diax {
 		frmUstore.getContentPane().add(separator);
 		
 		JButton button_1 = new JButton("");
-		button_1.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\add.png"));
+		button_1.setIcon(new ImageIcon("src\\icons\\add.png"));
 		button_1.setBackground(Color.WHITE);
 		button_1.setBounds(100, 180, 125, 125);
 		frmUstore.getContentPane().add(button_1);
 		
 		JButton button_2 = new JButton("");
-		button_2.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\screen.png"));
+		button_2.setIcon(new ImageIcon("src\\icons\\screen.png"));
 		button_2.setBackground(Color.WHITE);
 		button_2.setBounds(305, 180, 125, 125);
 		frmUstore.getContentPane().add(button_2);
 		
 		JButton button_3 = new JButton("");
-		button_3.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\edit.png"));
+		button_3.setIcon(new ImageIcon("src\\icons\\edit.png"));
 		button_3.setBackground(Color.WHITE);
 		button_3.setBounds(510, 180, 125, 125);
 		frmUstore.getContentPane().add(button_3);
 		
 		JButton button_4 = new JButton("");
-		button_4.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\search_1.png"));
+		button_4.setIcon(new ImageIcon("src\\icons\\search_1.png"));
 		button_4.setBackground(Color.WHITE);
 		button_4.setBounds(715, 180, 125, 125);
 		frmUstore.getContentPane().add(button_4);
 		
 		JButton button_5 = new JButton("");
-		button_5.setIcon(new ImageIcon("C:\\Users\\georg\\Documents\\GitHub\\ml_2015\\src\\icons\\statistics.png"));
+		button_5.setIcon(new ImageIcon("src\\icons\\statistics.png"));
 		button_5.setBackground(Color.WHITE);
 		button_5.setBounds(920, 180, 125, 125);
 		frmUstore.getContentPane().add(button_5);

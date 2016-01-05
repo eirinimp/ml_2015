@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class show_reverse {
 
@@ -52,14 +53,16 @@ public class show_reverse {
 		frmUstore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUstore.getContentPane().setLayout(null);
 		
-		JButton button_01 = new JButton("\u0391\u03C1\u03C7\u03B9\u03BA\u03AE");
+		JButton button_01 = new JButton("");
+		button_01.setIcon(new ImageIcon("src\\icons\\home.png"));
 		button_01.setBackground(Color.WHITE);
 		button_01.setBounds(0, 0, 50, 50);
 		frmUstore.getContentPane().add(button_01);
 		button_01.setMaximumSize(new Dimension(20, 20));
 		button_01.setFont(new Font("Arial", Font.PLAIN, 10));
 		
-		JButton button_02 = new JButton("\u03A0\u03AF\u03C3\u03C9");
+		JButton button_02 = new JButton("");
+		button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 		button_02.setBackground(Color.WHITE);
 		button_02.setMaximumSize(new Dimension(20, 20));
 		button_02.setFont(new Font("Arial", Font.PLAIN, 10));
@@ -71,7 +74,8 @@ public class show_reverse {
 		label_0.setBounds(1050, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
 		
-		JButton button_03 = new JButton("\u0391\u03C0\u03BF\u03C3\u03CD\u03BD\u03B4\u03B5\u03C3\u03B7");
+		JButton button_03 = new JButton("");
+		button_03.setIcon(new ImageIcon("src\\icons\\power.png"));
 		button_03.setBackground(Color.WHITE);
 		button_03.setMaximumSize(new Dimension(20, 20));
 		button_03.setFont(new Font("Arial", Font.PLAIN, 10));

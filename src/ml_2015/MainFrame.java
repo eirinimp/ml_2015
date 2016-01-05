@@ -12,12 +12,13 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JSeparator;
+import javax.swing.JPasswordField;
 
 public class MainFrame {
 
 	private JFrame frmUstore;
 	private JTextField txtUsername;
-	private JTextField txtPassword;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -76,10 +77,10 @@ public class MainFrame {
 		frmUstore.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 		
-		txtPassword = new JTextField();
-		txtPassword.setBounds(900, 200, 150, 25);
-		frmUstore.getContentPane().add(txtPassword);
-		txtPassword.setColumns(10);
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Arial", Font.PLAIN, 12));
+		passwordField.setBounds(900, 200, 150, 25);
+		frmUstore.getContentPane().add(passwordField);
 		
 		JButton btnLogIn = new JButton("Log In");
 		btnLogIn.setBackground(new Color(30, 144, 255));

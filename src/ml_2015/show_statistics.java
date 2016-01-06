@@ -4,13 +4,13 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Font;
-import javax.swing.JMenuBar;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.SwingConstants;
-import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.ImageIcon;
 
@@ -47,12 +47,13 @@ public class show_statistics {
 	 */
 	private void initialize() {
 		frmUstore = new JFrame();
+		frmUstore.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\icons\\logo.png"));
 		frmUstore.setFont(new Font("Arial", Font.PLAIN, 15));
 		frmUstore.setTitle("uStore");
 		frmUstore.setBounds(100, 100, 450, 300);
 		frmUstore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmUstore.getContentPane().setLayout(null);
-		
+
 		JButton button_01 = new JButton("");
 		button_01.setIcon(new ImageIcon("src\\icons\\home.png"));
 		button_01.setBackground(Color.WHITE);
@@ -105,15 +106,15 @@ public class show_statistics {
 		frmUstore.getContentPane().add(button_1);
 		
 		JSeparator separator_3 = new JSeparator();
-		separator_3.setBounds(0, 540, 1200, 7);
+		separator_3.setBounds(0, 535, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
-		
+
 		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
 		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
 		label_10.setBackground(Color.DARK_GRAY);
-		label_10.setBounds(10, 545, 434, 14);
+		label_10.setBounds(10, 540, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
 }

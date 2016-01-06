@@ -4,7 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Font;
-import javax.swing.JMenuBar;
+import java.awt.Toolkit;
+
 import javax.swing.JButton;
 import java.awt.Dimension;
 import javax.swing.JLabel;
@@ -53,6 +54,9 @@ public class new_product {
 	 */
 	private void initialize() {
 		frmUstore = new JFrame();
+		frmUstore.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\icons\\logo.png"));
+		frmUstore.setBackground(new Color(0, 0, 128));
+		frmUstore.getContentPane().setFont(new Font("Arial", Font.PLAIN, 11));
 		frmUstore.setFont(new Font("Arial", Font.PLAIN, 15));
 		frmUstore.setTitle("uStore");
 		frmUstore.setBounds(100, 100, 450, 300);
@@ -163,8 +167,15 @@ public class new_product {
 		textField_6.setBounds(570, 320, 200, 25);
 		frmUstore.getContentPane().add(textField_6);
 		
+		JButton btn_create = new JButton("\u0394\u0397\u039C\u0399\u039F\u03A5\u03A1\u0393\u0399\u0391");
+		btn_create.setBackground(new Color(30, 144, 255));
+		btn_create.setForeground(Color.white);
+		btn_create.setFont(new Font("Arial", Font.PLAIN, 12));
+		btn_create.setBounds(600, 380, 120, 25);
+		frmUstore.getContentPane().add(btn_create);
+		
 		JSeparator separator_3 = new JSeparator();
-		separator_3.setBounds(0, 540, 1200, 7);
+		separator_3.setBounds(0, 535, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 		
 		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
@@ -172,7 +183,7 @@ public class new_product {
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
 		label_10.setBackground(Color.DARK_GRAY);
-		label_10.setBounds(10, 545, 434, 14);
+		label_10.setBounds(10, 540, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
 }

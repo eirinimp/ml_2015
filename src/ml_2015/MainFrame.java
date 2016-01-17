@@ -130,22 +130,22 @@ public class MainFrame {
 		frmUstore.getContentPane().add(lblUstore);
 		
 		lblUsername = new JLabel("Username");
-		lblUsername.setBounds(330, 80, 65, 20);
+		lblUsername.setBounds(780, 120, 65, 20);
 		frmUstore.getContentPane().add(lblUsername);
 		
 		lblPassword = new JLabel("Password");
-		lblPassword.setBounds(330, 120, 65, 20);
+		lblPassword.setBounds(780, 160, 65, 20);
 		frmUstore.getContentPane().add(lblPassword);
 		
 		txtUsername = new JTextField();
 		txtUsername.setFont(new Font("Arial", Font.PLAIN, 12));
-		txtUsername.setBounds(400, 80, 130, 25);
+		txtUsername.setBounds(860, 120, 130, 25);
 		frmUstore.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 		
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Arial", Font.PLAIN, 12));
-		passwordField.setBounds(400, 120, 130, 25);
+		passwordField.setBounds(860, 160, 130, 25);
 		frmUstore.getContentPane().add(passwordField);
 		
 		button_00 = new JButton("");
@@ -773,11 +773,11 @@ public class MainFrame {
 		btnLogIn.setBackground(new Color(30, 144, 255));
 		btnLogIn.setForeground(Color.white);
 		btnLogIn.setFont(new Font("Arial", Font.PLAIN, 12));
-		btnLogIn.setBounds(418, 160, 90, 25);
+		btnLogIn.setBounds(875, 200, 90, 25);
 		frmUstore.getContentPane().add(btnLogIn);
 		
 		separator_3 = new JSeparator();
-		separator_3.setBounds(0, 540, 1200, 7);
+		separator_3.setBounds(0, 550, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 
 		label_10 = new JLabel("\u00a9 Copyright uStore A.E. 2015");
@@ -785,7 +785,7 @@ public class MainFrame {
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
 		label_10.setBackground(Color.DARK_GRAY);
-		label_10.setBounds(10, 545, 434, 14);
+		label_10.setBounds(10, 555, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
 	

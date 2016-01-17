@@ -69,4 +69,3 @@ INSERT INTO `users` VALUES ('1', 'eirinimp', '', 'Ειρήνη', 'Μπούντο
 INSERT INTO `users` VALUES ('2', 'ritsakost', '', 'Αγορίτσα', 'Κωστοπούλου', 'admin', 'ritsakostopoulou@hotmail.com', '6975757575', 'Καρδίτσα Καρδίτσας');
 INSERT INTO `users` VALUES ('3', 'georgekap', '', 'Γεώργιος', 'Κάπαϊ', 'admin', 'georgekapai@hotmail.com', '6976767676', 'Ακράτα Αχαΐας');
 INSERT INTO `users` VALUES ('4', 'pankar', '', 'Παναγιώτα', 'Καραλή', 'user', 'pan_kar@hotmail.com', '6955555555', 'Αργος Αργολίδας');
-INSERT INTO `users` VALUES ('5', '', '', '', '', '', '', '', '');

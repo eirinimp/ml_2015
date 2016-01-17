@@ -25,6 +25,7 @@ public class diax {
 	private JTextField new_product_textField_4;
 	private JTextField new_product_textField_5;
 	private JTextField new_product_textField_6;
+	private JTextField search_textField;
 
 	/**
 	 * Launch the application.
@@ -54,7 +55,7 @@ public class diax {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frmUstore = new JFrame();
 		frmUstore.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\icons\\logo.png"));
 		frmUstore.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -64,12 +65,13 @@ public class diax {
 		frmUstore.getContentPane().setLayout(null);
 		
 		JButton button_00 = new JButton("");
+		button_00.setFont(new Font("Arial", Font.PLAIN, 12));
 		button_00.setIcon(new ImageIcon("src\\icons\\logo.png"));
 		button_00.setBackground(Color.WHITE);
 		button_00.setBounds(0, 0, 50, 50);
 		frmUstore.getContentPane().add(button_00);
 
-		JLabel label_0 = new JLabel("\u0394\u03B9\u03B1\u03C7\u03B5\u03B9\u03C1\u03B9\u03C3\u03C4\u03AE\u03C2");
+		JLabel label_0 = new JLabel("  ");
 		label_0.setFont(new Font("Arial", Font.BOLD, 12));
 		label_0.setBounds(1050, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
@@ -116,67 +118,67 @@ public class diax {
 		button_5.setBounds(920, 180, 125, 125);
 		frmUstore.getContentPane().add(button_5);
 		
-		JLabel label_1 = new JLabel("\u0394\u0397\u039C\u0399\u039F\u03A5\u03A1\u0393\u0399\u0391");
+		JLabel label_1 = new JLabel("дглиоуяциа");
 		label_1.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_1.setBounds(120, 310, 150, 70);
 		frmUstore.getContentPane().add(label_1);
 
-		JLabel label_12 = new JLabel("\u039D\u0395\u039F\u03A5 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+		JLabel label_12 = new JLabel("меоу пяозомтос");
 		label_12.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_12.setBounds(98, 330, 150, 70);
 		frmUstore.getContentPane().add(label_12);
 
-		JLabel label_2 = new JLabel("\u03A0\u03A1\u039F\u0392\u039F\u039B\u0397");
+		JLabel label_2 = new JLabel("пяобокг");
 		label_2.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_2.setBounds(330, 300, 150, 70);
 		frmUstore.getContentPane().add(label_2);
 
-		JLabel label_22 = new JLabel("\u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3");
+		JLabel label_22 = new JLabel("апохелатос");
 		label_22.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_22.setBounds(318, 320, 150, 70);
 		frmUstore.getContentPane().add(label_22);
 
-		JLabel label_23 = new JLabel("\u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+		JLabel label_23 = new JLabel("пяозомтос");
 		label_23.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_23.setBounds(325, 340, 150, 70);
 		frmUstore.getContentPane().add(label_23);
 
-		JLabel label_3 = new JLabel("\u0395\u03A0\u0395\u039E\u0395\u03A1\u0393\u0391\u03A3\u0399\u0391");
+		JLabel label_3 = new JLabel("епенеяцасиа");
 		label_3.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_3.setBounds(525, 300, 150, 70);
 		frmUstore.getContentPane().add(label_3);
 
-		JLabel label_32 = new JLabel("\u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3");
+		JLabel label_32 = new JLabel("апохелатос");
 		label_32.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_32.setBounds(521, 320, 150, 70);
 		frmUstore.getContentPane().add(label_32);
 
-		JLabel label_33 = new JLabel("\u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+		JLabel label_33 = new JLabel("пяозомтос");
 		label_33.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_33.setBounds(528, 340, 150, 70);
 		frmUstore.getContentPane().add(label_33);
 
-		JLabel label_4 = new JLabel("\u0391\u039D\u0391\u0396\u0397\u03A4\u0397\u03A3\u0397 \u03A3\u03A4\u0391");
+		JLabel label_4 = new JLabel("амафгтгсг ста");
 		label_4.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_4.setBounds(720, 310, 150, 70);
 		frmUstore.getContentPane().add(label_4);
 
-		JLabel label_42 = new JLabel("\u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u0391");
+		JLabel label_42 = new JLabel("апохелата");
 		label_42.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_42.setBounds(730, 330, 150, 70);
 		frmUstore.getContentPane().add(label_42);
 
-		JLabel label_5 = new JLabel("\u0395\u039C\u03A6\u0391\u039D\u0399\u03A3\u0397");
+		JLabel label_5 = new JLabel("елжамисг");
 		label_5.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_5.setBounds(945, 300, 150, 70);
 		frmUstore.getContentPane().add(label_5);
 
-		JLabel label_52 = new JLabel("\u03A3\u03A4\u0391\u03A4\u0399\u03A3\u03A4\u0399\u039A\u03A9\u039D");
+		JLabel label_52 = new JLabel("статистийым");
 		label_52.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_52.setBounds(938, 320, 150, 70);
 		frmUstore.getContentPane().add(label_52);
 
-		JLabel label_53 = new JLabel("\u03A3\u03A4\u039F\u0399\u03A7\u0395\u0399\u03A9\u039D");
+		JLabel label_53 = new JLabel("стоивеиым");
 		label_53.setFont(new Font("Arial", Font.PLAIN, 15));
 		label_53.setBounds(945, 340, 150, 70);
 		frmUstore.getContentPane().add(label_53);
@@ -202,7 +204,7 @@ public class diax {
 				label_52.setVisible(false);
 				label_53.setVisible(false);
 				
-				JLabel label_task = new JLabel("\u0394\u0397\u039C\u0399\u039F\u03A5\u03A1\u0393\u0399\u0391 \u039D\u0395\u039F\u03A5 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+				JLabel label_task = new JLabel("дглиоуяциа меоу пяозомтос");
 				label_task.setBackground(Color.DARK_GRAY);
 				label_task.setForeground(Color.DARK_GRAY);
 				label_task.setFont(new Font("Arial", Font.PLAIN, 20));
@@ -213,7 +215,7 @@ public class diax {
 				separator_2.setBounds(0, 85, 1500, 7);
 				frmUstore.getContentPane().add(separator_2);
 				
-				JLabel new_product_label_1 = new JLabel("\u03A4\u03AF\u03C4\u03BB\u03BF\u03C2");
+				JLabel new_product_label_1 = new JLabel("тъТКОР");
 				new_product_label_1.setFont(new Font("Arial", Font.PLAIN, 15));
 				new_product_label_1.setBounds(450, 120, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_1);
@@ -223,22 +225,22 @@ public class diax {
 				new_product_label_2.setBounds(450, 160, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_2);
 				
-				JLabel new_product_label_3 = new JLabel("\u039A\u03B1\u03C4\u03B7\u03B3\u03BF\u03C1\u03AF\u03B1");
+				JLabel new_product_label_3 = new JLabel("йАТГЦОЯъА");
 				new_product_label_3.setFont(new Font("Arial", Font.PLAIN, 15));
 				new_product_label_3.setBounds(450, 200, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_3);
 				
-				JLabel new_product_label_4 = new JLabel("\u03A5\u03C0\u03BF\u03BA\u03B1\u03C4\u03B7\u03B3\u03BF\u03C1\u03AF\u03B1");
+				JLabel new_product_label_4 = new JLabel("уПОЙАТГЦОЯъА");
 				new_product_label_4.setFont(new Font("Arial", Font.PLAIN, 15));
 				new_product_label_4.setBounds(450, 240, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_4);
 				
-				JLabel new_product_label_5 = new JLabel("\u03A4\u03B9\u03BC\u03AE");
+				JLabel new_product_label_5 = new JLabel("тИЛч");
 				new_product_label_5.setFont(new Font("Arial", Font.PLAIN, 15));
 				new_product_label_5.setBounds(450, 280, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_5);
 				
-				JLabel new_product_label_6 = new JLabel("\u03A6.\u03A0.\u0391.");
+				JLabel new_product_label_6 = new JLabel("ж.п.а.");
 				new_product_label_6.setFont(new Font("Arial", Font.PLAIN, 15));
 				new_product_label_6.setBounds(450, 320, 100, 25);
 				frmUstore.getContentPane().add(new_product_label_6);
@@ -272,8 +274,9 @@ public class diax {
 				new_product_textField_6.setColumns(10);
 				new_product_textField_6.setBounds(570, 320, 200, 25);
 				frmUstore.getContentPane().add(new_product_textField_6);
+				//new_product_textField_6.setHorizontalAlignment(JTextField.RIGHT);
 				
-				JButton new_product_button = new JButton("\u0394\u0397\u039C\u0399\u039F\u03A5\u03A1\u0393\u0399\u0391");
+				JButton new_product_button = new JButton("дглиоуяциа");
 				new_product_button.setBackground(new Color(30, 144, 255));
 				new_product_button.setForeground(Color.white);
 				new_product_button.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -349,11 +352,11 @@ public class diax {
 				label_52.setVisible(false);
 				label_53.setVisible(false);
 				
-				JLabel label_task = new JLabel("\u03A0\u03A1\u039F\u0392\u039F\u039B\u0397 \u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+				JLabel label_task = new JLabel("пяобокг апохелатос пяозомтос");
+				label_task.setBounds(0, 55, 500, 25);
 				label_task.setBackground(Color.DARK_GRAY);
 				label_task.setForeground(Color.DARK_GRAY);
 				label_task.setFont(new Font("Arial", Font.PLAIN, 20));
-				label_task.setBounds(10, 55, 500, 25);
 				frmUstore.getContentPane().add(label_task);
 				
 				JSeparator separator_2 = new JSeparator();
@@ -416,11 +419,11 @@ public class diax {
 				label_52.setVisible(false);
 				label_53.setVisible(false);
 				
-				JLabel label_task = new JLabel("\u0395\u03A0\u0395\u039E\u0395\u03A1\u0393\u0391\u03A3\u0399\u0391 \u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u039F\u03A3 \u03A0\u03A1\u039F\u03AA\u039F\u039D\u03A4\u039F\u03A3");
+				JLabel label_task = new JLabel("епенеяцасиа апохелатос пяозомтос");
 				label_task.setBackground(Color.DARK_GRAY);
 				label_task.setForeground(Color.DARK_GRAY);
 				label_task.setFont(new Font("Arial", Font.PLAIN, 20));
-				label_task.setBounds(10, 55, 500, 25);
+				label_task.setBounds(50, 55, 500, 25);
 				frmUstore.getContentPane().add(label_task);
 				
 				JSeparator separator_2 = new JSeparator();
@@ -483,24 +486,23 @@ public class diax {
 				label_52.setVisible(false);
 				label_53.setVisible(false);
 				
-				JLabel label_task = new JLabel("\u0391\u039D\u0391\u0396\u0397\u03A4\u0397\u03A3\u0397 \u03A3\u03A4\u0391 \u0391\u03A0\u039F\u0398\u0395\u039C\u0391\u03A4\u0391");
+				JLabel label_task = new JLabel("амафгтгсг ста апохелата");
 				label_task.setBackground(Color.DARK_GRAY);
 				label_task.setForeground(Color.DARK_GRAY);
 				label_task.setFont(new Font("Arial", Font.PLAIN, 20));
-				label_task.setBounds(10, 55, 500, 25);
+				label_task.setBounds(50, 55, 500, 25);
 				frmUstore.getContentPane().add(label_task);
 				
 				JSeparator separator_2 = new JSeparator();
 				separator_2.setBounds(0, 85, 1500, 7);
 				frmUstore.getContentPane().add(separator_2);
 				
-				//search_textField = new JTextField();
-				//search_textField.setFont(new Font("Arial", Font.PLAIN, 15));
-				//search_textField.setBounds(330, 180, 500, 40);
-				//frmUstore.getContentPane().add(search_textField);
-				//search_textField.setColumns(10);
+				search_textField = new JTextField();
+				search_textField.setColumns(10);
+				search_textField.setBounds(330, 180, 500, 40);
+				frmUstore.getContentPane().add(search_textField);
 				
-				JButton search_btn = new JButton("\u0391\u039D\u0391\u0396\u0397\u03A4\u0397\u03A3\u0397");
+				JButton search_btn = new JButton("амафгтгсг");
 				search_btn.setBackground(new Color(30, 144, 255));
 				search_btn.setForeground(Color.white);
 				search_btn.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -538,6 +540,7 @@ public class diax {
 						search_btn.setVisible(false);
 						label_task.setVisible(false);
 						separator_2.setVisible(false);
+						search_textField.setVisible(false);
 					}
 				});
 			}
@@ -564,22 +567,22 @@ public class diax {
 				label_52.setVisible(false);
 				label_53.setVisible(false);
 				
-				JLabel label_task = new JLabel("\u0395\u039C\u03A6\u0391\u039D\u0399\u03A3\u0397 \u03A3\u03A4\u0391\u03A4\u0399\u03A3\u03A4\u0399\u039A\u03A9\u039D \u03A3\u03A4\u039F\u0399\u03A7\u0395\u0399\u03A9\u039D");
+				JLabel label_task = new JLabel("елжамисг статистийым стоивеиым");
 				label_task.setBackground(Color.DARK_GRAY);
 				label_task.setForeground(Color.DARK_GRAY);
 				label_task.setFont(new Font("Arial", Font.PLAIN, 20));
-				label_task.setBounds(10, 55, 500, 25);
+				label_task.setBounds(0, 55, 500, 25);
 				frmUstore.getContentPane().add(label_task);
 				
 				JSeparator separator_2 = new JSeparator();
-				separator_2.setBounds(0, 85, 1200, 7);
+				separator_2.setBounds(0, 85, 1500, 7);
 				frmUstore.getContentPane().add(separator_2);
 				
-				JButton statistics_btn = new JButton("\u0391\u039B\u039B\u0391\u0393\u0397");
-				statistics_btn.setBackground(new Color(30, 144, 255));
-				statistics_btn.setForeground(Color.white);
-				statistics_btn.setFont(new Font("Arial", Font.PLAIN, 12));
+				JButton statistics_btn = new JButton("аккацг");
 				statistics_btn.setBounds(950, 450, 150, 25);
+				statistics_btn.setForeground(Color.white);
+				statistics_btn.setBackground(new Color(30, 144, 255));
+				statistics_btn.setFont(new Font("Arial", Font.PLAIN, 12));
 				frmUstore.getContentPane().add(statistics_btn);
 				
 				JButton button_02 = new JButton("");
@@ -622,7 +625,7 @@ public class diax {
 		separator_3.setBounds(0, 535, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 
-		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
+		JLabel label_10 = new JLabel("\u00a9 Copyright uStore A.E. 2015");
 		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));

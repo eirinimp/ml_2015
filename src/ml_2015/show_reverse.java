@@ -6,16 +6,26 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Vector;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.ImageIcon;
+import javax.swing.JTable;
 
 public class show_reverse {
 
+	public static Connection conn = connect.connect();
 	private JFrame frmUstore;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -36,15 +46,17 @@ public class show_reverse {
 
 	/**
 	 * Create the application.
+	 * @throws SQLException 
 	 */
-	public show_reverse() {
+	public show_reverse() throws SQLException {
 		initialize();
 	}
 
 	/**
 	 * Initialize the contents of the frame.
+	 * @throws SQLException 
 	 */
-	private void initialize() {
+	private void initialize() throws SQLException {
 		frmUstore = new JFrame();
 		frmUstore.setIconImage(Toolkit.getDefaultToolkit().getImage("src\\icons\\logo.png"));
 		frmUstore.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -97,11 +109,27 @@ public class show_reverse {
 		separator_2.setBounds(0, 85, 1200, 7);
 		frmUstore.getContentPane().add(separator_2);
 		
+		//
+		ResultSet rs = null;
+		try {
+			Statement stmt = conn.createStatement();
+			rs = stmt.executeQuery("select * from products" );
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//
+		
+		table = new JTable( buildTableModel(rs) );
+		table.setFont(new Font("Arial", Font.PLAIN, 12));
+		table.setBounds(180, 130, 800, 300);
+		frmUstore.getContentPane().add(table);
+		
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setBounds(0, 535, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 
-		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
+		JLabel label_10 = new JLabel("\u00a9 Copyright uStore A.E. 2015");
 		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
@@ -109,5 +137,30 @@ public class show_reverse {
 		label_10.setBounds(10, 540, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
+	
+	public static DefaultTableModel buildTableModel(ResultSet rs)
+	        throws SQLException {
 
+	    ResultSetMetaData metaData = rs.getMetaData();
+
+	    // names of columns
+	    Vector<String> columnNames = new Vector<String>();
+	    int columnCount = metaData.getColumnCount();
+	    for (int column = 1; column <= columnCount; column++) {
+	        columnNames.add(metaData.getColumnName(column));
+	    }
+
+	    // data of the table
+	    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+	    while (rs.next()) {
+	        Vector<Object> vector = new Vector<Object>();
+	        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+	            vector.add(rs.getObject(columnIndex));
+	        }
+	        data.add(vector);
+	    }
+
+	    return new DefaultTableModel(data, columnNames);
+
+	}
 }

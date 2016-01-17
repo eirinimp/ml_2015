@@ -140,7 +140,7 @@ public class ipal {
 		separator_3.setBounds(0, 535, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 
-		JLabel label_10 = new JLabel("Copyright uStore A.E. 2015");
+		JLabel label_10 = new JLabel("\u00a9 Copyright uStore A.E. 2015");
 		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 10));

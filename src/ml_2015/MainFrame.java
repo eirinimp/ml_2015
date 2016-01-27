@@ -12,20 +12,26 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
 import javax.swing.JPasswordField;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Vector;
 	
 public class MainFrame {
 	
-	public static Connection conn = connect.connect();
 	public String typeOfUser;
 	public String nameOfUser;
+	
+	private JTable table;
 		
 	private JTextField new_product_textField_1;
 	private JTextField new_product_textField_2;
@@ -65,7 +71,6 @@ public class MainFrame {
 	private JLabel label_10;
 	
 	private JButton button_00;
-	private JButton button_03;
 	private JButton button_1;
 	private JButton button_2;
 	private JButton button_3;
@@ -156,20 +161,10 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_00);
 		button_00.setVisible(false);
 
-		label_0 = new JLabel("  ");
+		label_0 = new JLabel("");
 		label_0.setFont(new Font("Arial", Font.BOLD, 12));
 		label_0.setBounds(1050, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
-		label_0.setVisible(false);
-
-		button_03 = new JButton("");
-		button_03.setIcon(new ImageIcon("src\\icons\\power.png"));
-		button_03.setBackground(Color.WHITE);
-		button_03.setMaximumSize(new Dimension(20, 20));
-		button_03.setFont(new Font("Arial", Font.PLAIN, 10));
-		button_03.setBounds(1145, 0, 50, 50);
-		frmUstore.getContentPane().add(button_03);
-		button_03.setVisible(false);
 		
 		separator = new JSeparator();
 		separator.setBounds(0, 51, 1200, 7);
@@ -338,7 +333,7 @@ public class MainFrame {
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				connectToDB(txtUsername.getText(), passwordField.getPassword());
-				if (conn != null){
+				if ( typeOfUser.equals("admin") ){
 					lblUstore.setVisible(false);
 					lblUsername.setVisible(false);
 					lblPassword.setVisible(false);
@@ -347,7 +342,6 @@ public class MainFrame {
 					btnLogIn.setVisible(false);
 					button_00.setVisible(true);
 					label_0.setVisible(true);
-					button_03.setVisible(true);
 					separator.setVisible(true);
 					button_1.setVisible(true);
 					button_2.setVisible(true);
@@ -461,6 +455,13 @@ public class MainFrame {
 							new_product_button.setFont(new Font("Arial", Font.PLAIN, 12));
 							new_product_button.setBounds(600, 380, 120, 25);
 							frmUstore.getContentPane().add(new_product_button);
+							new_product_button.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									addNewProduct();
+								}
+							});
+							
 							
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
@@ -534,6 +535,20 @@ public class MainFrame {
 							label_task_2.setVisible(true);
 							separator_2.setVisible(true);
 							
+							try {
+								Connection conn = connect.connect();
+								PreparedStatement ps = conn.prepareStatement("select * from products");
+								ResultSet rs = ps.executeQuery( );
+
+								table = new JTable( buildTableModel(rs) );
+								conn.close();
+							} catch (SQLException e1) {
+								e1.printStackTrace();
+							}
+							table.setFont(new Font("Arial", Font.PLAIN, 12));
+							table.setBounds(180, 130, 800, 300);
+							frmUstore.getContentPane().add(table);
+							
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -564,6 +579,7 @@ public class MainFrame {
 									button_02.setVisible(false);
 									label_task_2.setVisible(false);
 									separator_2.setVisible(false);
+									table.setVisible(false);
 								}
 							});
 						}
@@ -593,6 +609,22 @@ public class MainFrame {
 
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
+							
+							//
+							ResultSet rs = null;
+							try {
+								Connection conn = connect.connect();
+								PreparedStatement ps = conn.prepareStatement("select * from products");
+								rs = ps.executeQuery();
+
+								table = new JTable( buildTableModel(rs) );
+								conn.close();
+							} catch (SQLException e1) {
+								e1.printStackTrace();
+							}
+							table.setFont(new Font("Arial", Font.PLAIN, 12));
+							table.setBounds(180, 130, 800, 300);
+							frmUstore.getContentPane().add(table);
 							
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
@@ -624,6 +656,7 @@ public class MainFrame {
 									button_02.setVisible(false);
 									label_task_3.setVisible(false);
 									separator_2.setVisible(false);
+									table.setVisible(false);
 								}
 							});
 						}
@@ -792,21 +825,82 @@ public class MainFrame {
 	private void connectToDB( String username, char[] cs ) {
 		String passText = new String( cs );
 
-		ResultSet rs = null;
-
 		try {
-			Statement stmt = conn.createStatement();
-			rs = stmt.executeQuery("select * from users where `username`='" + username + "' "
-					+ "AND `password`='" + passText + "'" );
-			connect.printResult(rs);
+			Connection conn = connect.connect();
+			String query = "SELECT * FROM `users` WHERE `username`=? AND `password`= md5(?) ";
+			PreparedStatement ps = conn.prepareStatement(query);
+
+			ps.setString(1, username);
+			ps.setString(2, passText);
 			
+			ResultSet rs = ps.executeQuery();
+
 			while ( rs.next() ) {
 					typeOfUser = rs.getString("rights");
-					nameOfUser = rs.getString("name");
+					nameOfUser = rs.getString("username");
+					
+					label_0.setText(nameOfUser);
+					label_0.setVisible(true);
 			}
+			conn.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
+	}
+
+	public void addNewProduct() {
+		
+//		if (txtUsername.getText().trim().equals("") && txtUsername.getText() != null ) {
+//		}
+		try {
+			Connection conn = connect.connect();
+			String query = "INSERT INTO `products`"
+							+ "(`title`, `barcode`, `category`, `subcategory`,"
+							+ "`price`, `vat`, `quantity`) "
+							+ "VALUES (?,?,?,?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+
+			ps.setString(1, new_product_textField_1.getText() );
+			ps.setString(2, new_product_textField_2.getText() );
+			ps.setString(3, new_product_textField_3.getText() );
+			ps.setString(4, new_product_textField_4.getText() );
+			ps.setDouble(5, Double.parseDouble(new_product_textField_5.getText() ) );
+			ps.setInt(6, Integer.parseInt(new_product_textField_6.getText() ) );
+			ps.setInt(7, 220 );
+			ps.executeUpdate();
+
+			conn.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	public static DefaultTableModel buildTableModel(ResultSet rs)
+	        throws SQLException {
+
+	    ResultSetMetaData metaData = rs.getMetaData();
+
+	    // names of columns
+	    Vector<String> columnNames = new Vector<String>();
+	    int columnCount = metaData.getColumnCount();
+	    for (int column = 1; column <= columnCount; column++) {
+	        columnNames.add(metaData.getColumnName(column));
+	    }
+
+	    // data of the table
+	    Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+	    while (rs.next()) {
+	        Vector<Object> vector = new Vector<Object>();
+	        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+	            vector.add(rs.getObject(columnIndex));
+	        }
+	        data.add(vector);
+	    }
+
+	    return new DefaultTableModel(data, columnNames);
+
 	}
 }

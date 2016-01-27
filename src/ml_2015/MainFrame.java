@@ -458,7 +458,30 @@ public class MainFrame {
 							new_product_button.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent e) {
-									addNewProduct();
+									if (new_product_textField_1.getText().trim().equals("") 
+											&& new_product_textField_1.getText() != null ) {
+										System.out.println("ERROR");
+									} else if (new_product_textField_2.getText().trim().equals("") 
+											&& new_product_textField_2.getText() != null ) {
+										System.out.println("ERROR2");
+									} else if (new_product_textField_3.getText().trim().equals("") 
+											&& new_product_textField_3.getText() != null ) {
+										System.out.println("ERROR3");
+									} else if (new_product_textField_4.getText().trim().equals("") 
+											&& new_product_textField_4.getText() != null ) {
+										System.out.println("ERROR4");
+									} else if (new_product_textField_5.getText().trim().equals("") 
+											&& new_product_textField_5.getText() != null ) {
+										System.out.println("ERROR5");
+									} else if (new_product_textField_6.getText().trim().equals("") 
+											&& new_product_textField_6.getText() != null ) {
+										System.out.println("ERROR6");
+//									} else if (new_product_textField_7.getText().trim().equals("") 
+//											&& new_product_textField_7.getText() != null ) {
+//										System.out.println("ERROR7");
+									} else {
+										addNewProduct();
+									}
 								}
 							});
 							
@@ -852,8 +875,6 @@ public class MainFrame {
 
 	public void addNewProduct() {
 		
-//		if (txtUsername.getText().trim().equals("") && txtUsername.getText() != null ) {
-//		}
 		try {
 			Connection conn = connect.connect();
 			String query = "INSERT INTO `products`"
@@ -868,7 +889,7 @@ public class MainFrame {
 			ps.setString(4, new_product_textField_4.getText() );
 			ps.setDouble(5, Double.parseDouble(new_product_textField_5.getText() ) );
 			ps.setInt(6, Integer.parseInt(new_product_textField_6.getText() ) );
-			ps.setInt(7, 220 );
+			ps.setInt(7, Integer.parseInt( 220+"" ) );
 			ps.executeUpdate();
 
 			conn.close();

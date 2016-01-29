@@ -39,6 +39,7 @@ public class MainFrame {
 	private JTextField new_product_textField_4;
 	private JTextField new_product_textField_5;
 	private JTextField new_product_textField_6;
+	private JTextField new_product_textField_7;
 	private JTextField search_textField;
 	private JLabel lblUstore;
 	private JLabel lblUsername;
@@ -68,7 +69,10 @@ public class MainFrame {
 	private JLabel new_product_label_4;
 	private JLabel new_product_label_5;
 	private JLabel new_product_label_6;
+	private JLabel new_product_label_7;
+	private JLabel new_product_label_done;
 	private JLabel label_10;
+	private JLabel label_conn_error;
 	
 	private JButton button_00;
 	private JButton button_1;
@@ -131,7 +135,7 @@ public class MainFrame {
 		
 		lblUstore = new JLabel("uStore");
 		lblUstore.setFont(new Font("Arial", Font.PLAIN, 40));
-		lblUstore.setBounds(70, 50, 200, 60);
+		lblUstore.setBounds(100, 60, 200, 60);
 		frmUstore.getContentPane().add(lblUstore);
 		
 		lblUsername = new JLabel("Username");
@@ -153,6 +157,11 @@ public class MainFrame {
 		passwordField.setBounds(860, 160, 130, 25);
 		frmUstore.getContentPane().add(passwordField);
 		
+		label_conn_error = new JLabel("Error!");
+		label_conn_error.setBounds(820, 250, 65, 20);
+		frmUstore.getContentPane().add(label_conn_error);
+		label_conn_error.setVisible(false);
+		
 		button_00 = new JButton("");
 		button_00.setFont(new Font("Arial", Font.PLAIN, 12));
 		button_00.setIcon(new ImageIcon("src\\icons\\logo.png"));
@@ -163,7 +172,7 @@ public class MainFrame {
 
 		label_0 = new JLabel("");
 		label_0.setFont(new Font("Arial", Font.BOLD, 12));
-		label_0.setBounds(1050, 20, 80, 15);
+		label_0.setBounds(1100, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
 		
 		separator = new JSeparator();
@@ -329,6 +338,21 @@ public class MainFrame {
 		frmUstore.getContentPane().add(label_task_5);
 		label_task_5.setVisible(false);
 		
+		new_product_button = new JButton("ƒ«Ã…œ’—√…¡");
+		new_product_button.setBackground(new Color(30, 144, 255));
+		new_product_button.setForeground(Color.white);
+		new_product_button.setFont(new Font("Arial", Font.PLAIN, 12));
+		new_product_button.setBounds(600, 420, 120, 25);
+		frmUstore.getContentPane().add(new_product_button);
+		new_product_button.setVisible(false);
+		
+		new_product_label_done = new JLabel("\u2713 « ‰ÁÏÈÔıÒ„ﬂ· Ì›Ôı ÒÔ˙¸ÌÙÔÚ ›„ÈÌÂ ÏÂ ÂÈÙı˜ﬂ·!");
+		new_product_label_done.setFont(new Font("Arial", Font.PLAIN, 16));
+		new_product_label_done.setBounds(480, 480, 350, 25);
+		new_product_label_done.setForeground(Color.GREEN);
+		frmUstore.getContentPane().add(new_product_label_done);
+		new_product_label_done.setVisible(false);
+		
 		btnLogIn = new JButton("”’Õƒ≈”«");
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -361,8 +385,6 @@ public class MainFrame {
 					label_5.setVisible(true);
 					label_52.setVisible(true);
 					label_53.setVisible(true);
-					
-					
 					
 					button_1.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
@@ -418,6 +440,11 @@ public class MainFrame {
 							new_product_label_6.setBounds(450, 320, 100, 25);
 							frmUstore.getContentPane().add(new_product_label_6);
 							
+							new_product_label_7 = new JLabel("–ÔÛ¸ÙÁÙ·");
+							new_product_label_7.setFont(new Font("Arial", Font.PLAIN, 15));
+							new_product_label_7.setBounds(450, 360, 100, 25);
+							frmUstore.getContentPane().add(new_product_label_7);
+							
 							new_product_textField_1 = new JTextField();
 							new_product_textField_1.setColumns(10);
 							new_product_textField_1.setBounds(570, 120, 200, 25);
@@ -449,12 +476,12 @@ public class MainFrame {
 							frmUstore.getContentPane().add(new_product_textField_6);
 							//new_product_textField_6.setHorizontalAlignment(JTextField.RIGHT);
 							
-							new_product_button = new JButton("ƒ«Ã…œ’—√…¡");
-							new_product_button.setBackground(new Color(30, 144, 255));
-							new_product_button.setForeground(Color.white);
-							new_product_button.setFont(new Font("Arial", Font.PLAIN, 12));
-							new_product_button.setBounds(600, 380, 120, 25);
-							frmUstore.getContentPane().add(new_product_button);
+							new_product_textField_7 = new JTextField();
+							new_product_textField_7.setColumns(10);
+							new_product_textField_7.setBounds(570, 360, 200, 25);
+							frmUstore.getContentPane().add(new_product_textField_7);
+							
+							new_product_button.setVisible(true);
 							new_product_button.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent e) {
@@ -476,15 +503,15 @@ public class MainFrame {
 									} else if (new_product_textField_6.getText().trim().equals("") 
 											&& new_product_textField_6.getText() != null ) {
 										System.out.println("ERROR6");
-//									} else if (new_product_textField_7.getText().trim().equals("") 
-//											&& new_product_textField_7.getText() != null ) {
-//										System.out.println("ERROR7");
+									} else if (new_product_textField_7.getText().trim().equals("") 
+											&& new_product_textField_7.getText() != null ) {
+										System.out.println("ERROR7");
 									} else {
 										addNewProduct();
+										new_product_label_done.setVisible(true);
 									}
 								}
 							});
-							
 							
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
@@ -519,16 +546,19 @@ public class MainFrame {
 									new_product_label_4.setVisible(false);
 									new_product_label_5.setVisible(false);
 									new_product_label_6.setVisible(false);
+									new_product_label_7.setVisible(false);
 									new_product_textField_1.setVisible(false);
 									new_product_textField_2.setVisible(false);
 									new_product_textField_3.setVisible(false);
 									new_product_textField_4.setVisible(false);
 									new_product_textField_5.setVisible(false);
 									new_product_textField_6.setVisible(false);
+									new_product_textField_7.setVisible(false);
 									button_02.setVisible(false);
 									label_task_1.setVisible(false);
 									separator_2.setVisible(false);
 									new_product_button.setVisible(false);
+									new_product_label_done.setVisible(false);
 								}
 							});
 						}
@@ -629,7 +659,6 @@ public class MainFrame {
 							label_52.setVisible(false);
 							label_53.setVisible(false);
 							
-
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
 							
@@ -816,13 +845,259 @@ public class MainFrame {
 							});
 						}
 					});
-					//if(typeOfUser.equals("admin")){
-						//diax a = new diax();
-						//a.initialize();
-					//}
-					//else{
-						
-					//}
+				} else if ( typeOfUser.equals("user") ){
+					lblUstore.setVisible(false);
+					lblUsername.setVisible(false);
+					lblPassword.setVisible(false);
+					txtUsername.setVisible(false);
+					passwordField.setVisible(false);
+					btnLogIn.setVisible(false);
+					button_00.setVisible(true);
+					label_0.setVisible(true);
+					separator.setVisible(true);
+					button_1.setVisible(true);
+					button_2.setVisible(true);
+					button_3.setVisible(true);
+					button_4.setVisible(true);
+					button_5.setVisible(true);
+					label_1.setVisible(true);
+					label_12.setVisible(true);
+					label_2.setVisible(true);
+					label_22.setVisible(true);
+					label_23.setVisible(true);
+					label_3.setVisible(true);
+					label_32.setVisible(true);
+					label_33.setVisible(true);
+					label_4.setVisible(true);
+					label_42.setVisible(true);
+					label_5.setVisible(true);
+					label_52.setVisible(true);
+					label_53.setVisible(true);
+					
+					button_2.addActionListener(new ActionListener(){
+						public void actionPerformed(ActionEvent e){
+							button_1.setVisible(false);
+							button_2.setVisible(false);
+							button_3.setVisible(false);
+							button_4.setVisible(false);
+							button_5.setVisible(false);
+							label_1.setVisible(false);
+							label_12.setVisible(false);
+							label_2.setVisible(false);
+							label_22.setVisible(false);
+							label_23.setVisible(false);
+							label_3.setVisible(false);
+							label_32.setVisible(false);
+							label_33.setVisible(false);
+							label_4.setVisible(false);
+							label_42.setVisible(false);
+							label_5.setVisible(false);
+							label_52.setVisible(false);
+							label_53.setVisible(false);
+							
+							label_task_2.setVisible(true);
+							separator_2.setVisible(true);
+							
+							try {
+								Connection conn = connect.connect();
+								PreparedStatement ps = conn.prepareStatement("select * from products");
+								ResultSet rs = ps.executeQuery( );
+
+								table = new JTable( buildTableModel(rs) );
+								conn.close();
+							} catch (SQLException e1) {
+								e1.printStackTrace();
+							}
+							table.setFont(new Font("Arial", Font.PLAIN, 12));
+							table.setBounds(180, 130, 800, 300);
+							frmUstore.getContentPane().add(table);
+							
+							button_02 = new JButton("");
+							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
+							button_02.setBackground(Color.WHITE);
+							button_02.setBounds(51, 0, 50, 50);
+							frmUstore.getContentPane().add(button_02);
+							button_02.setMaximumSize(new Dimension(20, 20));
+							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									button_1.setVisible(true);
+									button_2.setVisible(true);
+									button_3.setVisible(true);
+									button_4.setVisible(true);
+									button_5.setVisible(true);
+									label_1.setVisible(true);
+									label_12.setVisible(true);
+									label_2.setVisible(true);
+									label_22.setVisible(true);
+									label_23.setVisible(true);
+									label_3.setVisible(true);
+									label_32.setVisible(true);
+									label_33.setVisible(true);
+									label_4.setVisible(true);
+									label_42.setVisible(true);
+									label_5.setVisible(true);
+									label_52.setVisible(true);
+									label_53.setVisible(true);
+									button_02.setVisible(false);
+									label_task_2.setVisible(false);
+									separator_2.setVisible(false);
+									table.setVisible(false);
+								}
+							});
+						}
+					});
+					
+					button_3.addActionListener(new ActionListener(){
+						public void actionPerformed(ActionEvent e){
+							button_1.setVisible(false);
+							button_2.setVisible(false);
+							button_3.setVisible(false);
+							button_4.setVisible(false);
+							button_5.setVisible(false);
+							label_1.setVisible(false);
+							label_12.setVisible(false);
+							label_2.setVisible(false);
+							label_22.setVisible(false);
+							label_23.setVisible(false);
+							label_3.setVisible(false);
+							label_32.setVisible(false);
+							label_33.setVisible(false);
+							label_4.setVisible(false);
+							label_42.setVisible(false);
+							label_5.setVisible(false);
+							label_52.setVisible(false);
+							label_53.setVisible(false);
+							
+							label_task_3.setVisible(true);
+							separator_2.setVisible(true);
+							
+							//
+							ResultSet rs = null;
+							try {
+								Connection conn = connect.connect();
+								PreparedStatement ps = conn.prepareStatement("select * from products");
+								rs = ps.executeQuery();
+
+								table = new JTable( buildTableModel(rs) );
+								conn.close();
+							} catch (SQLException e1) {
+								e1.printStackTrace();
+							}
+							table.setFont(new Font("Arial", Font.PLAIN, 12));
+							table.setBounds(180, 130, 800, 300);
+							frmUstore.getContentPane().add(table);
+							
+							button_02 = new JButton("");
+							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
+							button_02.setBackground(Color.WHITE);
+							button_02.setBounds(51, 0, 50, 50);
+							frmUstore.getContentPane().add(button_02);
+							button_02.setMaximumSize(new Dimension(20, 20));
+							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									button_1.setVisible(true);
+									button_2.setVisible(true);
+									button_3.setVisible(true);
+									button_4.setVisible(true);
+									button_5.setVisible(true);
+									label_1.setVisible(true);
+									label_12.setVisible(true);
+									label_2.setVisible(true);
+									label_22.setVisible(true);
+									label_23.setVisible(true);
+									label_3.setVisible(true);
+									label_32.setVisible(true);
+									label_33.setVisible(true);
+									label_4.setVisible(true);
+									label_42.setVisible(true);
+									label_5.setVisible(true);
+									label_52.setVisible(true);
+									label_53.setVisible(true);
+									button_02.setVisible(false);
+									label_task_3.setVisible(false);
+									separator_2.setVisible(false);
+									table.setVisible(false);
+								}
+							});
+						}
+					});
+					
+					button_4.addActionListener(new ActionListener(){
+						public void actionPerformed(ActionEvent e){
+							button_1.setVisible(false);
+							button_2.setVisible(false);
+							button_3.setVisible(false);
+							button_4.setVisible(false);
+							button_5.setVisible(false);
+							label_1.setVisible(false);
+							label_12.setVisible(false);
+							label_2.setVisible(false);
+							label_22.setVisible(false);
+							label_23.setVisible(false);
+							label_3.setVisible(false);
+							label_32.setVisible(false);
+							label_33.setVisible(false);
+							label_4.setVisible(false);
+							label_42.setVisible(false);
+							label_5.setVisible(false);
+							label_52.setVisible(false);
+							label_53.setVisible(false);
+							
+							label_task_4.setVisible(true);
+							separator_2.setVisible(true);
+							
+							search_textField = new JTextField();
+							search_textField.setColumns(10);
+							search_textField.setBounds(330, 180, 500, 40);
+							frmUstore.getContentPane().add(search_textField);
+							
+							search_btn = new JButton("¡Õ¡∆«‘«”«");
+							search_btn.setBackground(new Color(30, 144, 255));
+							search_btn.setForeground(Color.white);
+							search_btn.setFont(new Font("Arial", Font.PLAIN, 12));
+							search_btn.setBounds(500, 250, 150, 25);
+							frmUstore.getContentPane().add(search_btn);
+							
+							button_02 = new JButton("");
+							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
+							button_02.setBackground(Color.WHITE);
+							button_02.setBounds(51, 0, 50, 50);
+							frmUstore.getContentPane().add(button_02);
+							button_02.setMaximumSize(new Dimension(20, 20));
+							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									button_1.setVisible(true);
+									button_2.setVisible(true);
+									button_3.setVisible(true);
+									button_4.setVisible(true);
+									button_5.setVisible(true);
+									label_1.setVisible(true);
+									label_12.setVisible(true);
+									label_2.setVisible(true);
+									label_22.setVisible(true);
+									label_23.setVisible(true);
+									label_3.setVisible(true);
+									label_32.setVisible(true);
+									label_33.setVisible(true);
+									label_4.setVisible(true);
+									label_42.setVisible(true);
+									label_5.setVisible(true);
+									label_52.setVisible(true);
+									label_53.setVisible(true);
+									button_02.setVisible(false);
+									search_btn.setVisible(false);
+									label_task_4.setVisible(false);
+									separator_2.setVisible(false);
+									search_textField.setVisible(false);
+								}
+							});
+						}
+					});
+				} else {
+					label_conn_error.setVisible(true);
 				}
 			}
 		});
@@ -899,6 +1174,7 @@ public class MainFrame {
 		}
 		
 	}
+	
 	public static DefaultTableModel buildTableModel(ResultSet rs)
 	        throws SQLException {
 
@@ -920,8 +1196,6 @@ public class MainFrame {
 	        }
 	        data.add(vector);
 	    }
-
 	    return new DefaultTableModel(data, columnNames);
-
 	}
 }

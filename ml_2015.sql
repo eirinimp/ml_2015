@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 27 Ιαν 2016 στις 21:44:33
--- Έκδοση διακομιστή: 5.6.21
--- Έκδοση PHP: 5.5.19
+-- Χρόνος δημιουργίας: 29 Ιαν 2016 στις 23:18:39
+-- Έκδοση διακομιστή: 5.6.24
+-- Έκδοση PHP: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
-`p_id` int(5) NOT NULL,
+  `p_id` int(5) NOT NULL,
   `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `barcode` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `category` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(10,2) NOT NULL,
   `vat` int(10) NOT NULL,
   `quantity` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `products`
@@ -50,8 +50,7 @@ INSERT INTO `products` (`p_id`, `title`, `barcode`, `category`, `subcategory`, `
 (6, 'Πλακέτα Επιχαλκωμένη 12x15', '0201596234878', 'Ηλεκτικά Στοιχεία', 'Εξαρτήματα', '0.80', 23, 80),
 (7, 'Κολλητήρι', '0204876239654', 'Εργαλεία', 'Εξαρτήματα', '15.00', 23, 60),
 (8, 'Καλάι', '0203571597894', 'Εργαλεία', 'Εξαρτήματα', '5.00', 23, 75),
-(9, 'Μικροελεγχτης PIC 16F877A', '0307894563217', 'Ηλεκτικά Στοιχεία', 'Μικροελεγχτές', '0.80', 23, 100),
-(10, 'Ασφάλεια 15Α', '0507896325415', 'Ηλεκτικά Στοιχεία', 'Ασφάλειες', '0.78', 23, 125);
+(9, 'Μικροελεγχτης PIC 16F877A', '0307894563217', 'Ηλεκτικά Στοιχεία', 'Μικροελεγχτές', '0.80', 23, 100);
 
 -- --------------------------------------------------------
 
@@ -60,7 +59,7 @@ INSERT INTO `products` (`p_id`, `title`, `barcode`, `category`, `subcategory`, `
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-`u_id` int(10) NOT NULL,
+  `u_id` int(10) NOT NULL,
   `username` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
@@ -79,7 +78,8 @@ INSERT INTO `users` (`u_id`, `username`, `password`, `name`, `surname`, `rights`
 (1, 'eirinimp', 'ce589abb971c391a62dac92dca8b3b35', 'Ειρήνη', 'Μπούντου', 'admin', 'eirini_mp94@hotmail.com', '6978787878', 'Κιβέρι Αργολίδας'),
 (2, 'ritsakost', '98f41855dd0de7e94e1bee9b7ac5c5b7', 'Αγορίτσα', 'Κωστοπούλου', 'admin', 'ritsakostopoulou@hotmail.com', '6975757575', 'Καρδίτσα Καρδίτσας'),
 (3, 'georgekap', '2771517ee94e060cfee58a939c2c19b1', 'Γεώργιος', 'Κάπαϊ', 'admin', 'georgekapai@hotmail.com', '6976767676', 'Ακράτα Αχαΐας'),
-(4, 'pankar', '1a1dc91c907325c69271ddf0c944bc72', 'Παναγιώτα', 'Καραλή', 'user', 'pan_kar@hotmail.com', '6955555555', 'Αργος Αργολίδας');
+(4, 'pankar', '1a1dc91c907325c69271ddf0c944bc72', 'Παναγιώτα', 'Καραλή', 'user', 'pan_kar@hotmail.com', '6955555555', 'Αργος Αργολίδας'),
+(5, 'test', 'test', 'test', 'test', 'user', 'test@test.gr', '6987654321', 'test test');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -89,13 +89,13 @@ INSERT INTO `users` (`u_id`, `username`, `password`, `name`, `surname`, `rights`
 -- Ευρετήρια για πίνακα `products`
 --
 ALTER TABLE `products`
- ADD PRIMARY KEY (`p_id`);
+  ADD PRIMARY KEY (`p_id`);
 
 --
 -- Ευρετήρια για πίνακα `users`
 --
 ALTER TABLE `users`
- ADD PRIMARY KEY (`u_id`);
+  ADD PRIMARY KEY (`u_id`);
 
 --
 -- AUTO_INCREMENT για άχρηστους πίνακες
@@ -105,12 +105,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT για πίνακα `products`
 --
 ALTER TABLE `products`
-MODIFY `p_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `p_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT για πίνακα `users`
 --
 ALTER TABLE `users`
-MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -13,6 +13,8 @@ import java.awt.Dimension;
 
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JPasswordField;
@@ -31,14 +33,15 @@ public class MainFrame {
 	//Dhlwsh Metavlhtwn	
 	public String typeOfUser;
 	public String nameOfUser;
-	private JTable table;		
-	private JTextField new_product_textField_1;
-	private JTextField new_product_textField_2;
-	private JTextField new_product_textField_3;
-	private JTextField new_product_textField_4;
-	private JTextField new_product_textField_5;
-	private JTextField new_product_textField_6;
-	private JTextField new_product_textField_7;
+	private JTable table;
+	private JTextField product_textField_1;
+	private JTextField product_textField_2;
+	private JTextField product_textField_3;
+	private JTextField product_textField_4;
+	private JTextField product_textField_5;
+	private JTextField product_textField_6;
+	private JTextField product_textField_7;
+	private JTextField product_textField_8;
 	private JTextField search_textField;
 	private JLabel lblUstore;
 	private JLabel lblUsername;
@@ -62,17 +65,18 @@ public class MainFrame {
 	private JLabel label_task_3;
 	private JLabel label_task_4;
 	private JLabel label_task_5;
-	private JLabel new_product_label_1;
-	private JLabel new_product_label_2;
-	private JLabel new_product_label_3;
-	private JLabel new_product_label_4;
-	private JLabel new_product_label_5;
-	private JLabel new_product_label_6;
-	private JLabel new_product_label_7;
+	private JLabel product_label_1;
+	private JLabel product_label_2;
+	private JLabel product_label_3;
+	private JLabel product_label_4;
+	private JLabel product_label_5;
+	private JLabel product_label_6;
+	private JLabel product_label_7;
+	private JLabel product_label_8;
 	private JLabel new_product_label_done;
+	private JLabel edit_product_label_done;
 	private JLabel label_result;
 	private JLabel label_10;
-	private JLabel label_conn_error;
 	private JLabel label_statistics;
 	private JButton button_00;
 	private JButton button_1;
@@ -83,6 +87,8 @@ public class MainFrame {
 	private JButton btnLogIn;
 	private JButton new_product_button;
 	private JButton button_02;
+	private JButton edit_btn;
+	private JButton edit_btn_2;
 	private JButton search_btn;	
 	private JSeparator separator;
 	private JSeparator separator_2;
@@ -160,12 +166,6 @@ public class MainFrame {
 		passwordField.setBounds(860, 160, 130, 25);
 		frmUstore.getContentPane().add(passwordField);
 		
-		//To label pou emfanizetai an yparxei lathos sthn syndesh mw thn vash
-		label_conn_error = new JLabel("Error!");
-		label_conn_error.setBounds(820, 250, 65, 20);
-		frmUstore.getContentPane().add(label_conn_error);
-		label_conn_error.setVisible(false);
-		
 		//Button me to logo
 		button_00 = new JButton("");
 		button_00.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -174,6 +174,16 @@ public class MainFrame {
 		button_00.setBounds(0, 0, 50, 50);
 		frmUstore.getContentPane().add(button_00);
 		button_00.setVisible(false);
+		
+		//Back button gia metavash sto arxiko menou
+		button_02 = new JButton("");
+		button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
+		button_02.setBackground(Color.WHITE);
+		button_02.setBounds(51, 0, 50, 50);
+		frmUstore.getContentPane().add(button_02);
+		button_02.setMaximumSize(new Dimension(20, 20));
+		button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+		button_02.setVisible(false);
 
 		//Ena label poy emfanizei panw dexia sthn efarmogh to username tou xrhsth
 		label_0 = new JLabel("");
@@ -357,6 +367,105 @@ public class MainFrame {
 		frmUstore.getContentPane().add(label_task_5);
 		label_task_5.setVisible(false);
 		
+		//Akolouthoun ta labels pou tha exoun ta textfields stin dhmiourgia neou proiontos kai sthn epexergasia
+		product_label_1 = new JLabel("Τίτλος");
+		product_label_1.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_1.setBounds(450, 120, 100, 25);
+		frmUstore.getContentPane().add(product_label_1);
+		product_label_1.setVisible(false);
+		
+		product_label_2 = new JLabel("Barcode");
+		product_label_2.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_2.setBounds(450, 160, 100, 25);
+		frmUstore.getContentPane().add(product_label_2);
+		product_label_2.setVisible(false);
+		
+		product_label_3 = new JLabel("Κατηγορία");
+		product_label_3.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_3.setBounds(450, 200, 100, 25);
+		frmUstore.getContentPane().add(product_label_3);
+		product_label_3.setVisible(false);
+		
+		product_label_4 = new JLabel("Υποκατηγορία");
+		product_label_4.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_4.setBounds(450, 240, 100, 25);
+		frmUstore.getContentPane().add(product_label_4);
+		product_label_4.setVisible(false);
+		
+		product_label_5 = new JLabel("Τιμή");
+		product_label_5.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_5.setBounds(450, 280, 100, 25);
+		frmUstore.getContentPane().add(product_label_5);
+		product_label_5.setVisible(false);
+		
+		product_label_6 = new JLabel("Φ.Π.Α.");
+		product_label_6.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_6.setBounds(450, 320, 100, 25);
+		frmUstore.getContentPane().add(product_label_6);
+		product_label_6.setVisible(false);
+		
+		product_label_7 = new JLabel("Ποσότητα");
+		product_label_7.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_7.setBounds(450, 360, 100, 25);
+		frmUstore.getContentPane().add(product_label_7);
+		product_label_7.setVisible(false);
+		
+		product_label_8 = new JLabel("Αριθμός στοιχείου");
+		product_label_8.setFont(new Font("Arial", Font.PLAIN, 15));
+		product_label_8.setBounds(450, 400, 100, 25);
+		frmUstore.getContentPane().add(product_label_8);
+		product_label_8.setVisible(false);
+		
+		//Akolouthoun ta textfileds opou o administrator grafei tis times tou kathe textfield
+		//sthn dhmiourgia neou proiontos kai sthn epexergasia
+		product_textField_1 = new JTextField();
+		product_textField_1.setColumns(10);
+		product_textField_1.setBounds(570, 120, 200, 25);
+		frmUstore.getContentPane().add(product_textField_1);
+		product_textField_1.setVisible(false);
+		
+		product_textField_2 = new JTextField();
+		product_textField_2.setColumns(10);
+		product_textField_2.setBounds(570, 160, 200, 25);
+		frmUstore.getContentPane().add(product_textField_2);
+		product_textField_2.setVisible(false);
+		
+		product_textField_3 = new JTextField();
+		product_textField_3.setColumns(10);
+		product_textField_3.setBounds(570, 200, 200, 25);
+		frmUstore.getContentPane().add(product_textField_3);
+		product_textField_3.setVisible(false);
+		
+		product_textField_4 = new JTextField();
+		product_textField_4.setColumns(10);
+		product_textField_4.setBounds(570, 240, 200, 25);
+		frmUstore.getContentPane().add(product_textField_4);
+		product_textField_4.setVisible(false);
+		
+		product_textField_5 = new JTextField();
+		product_textField_5.setColumns(10);
+		product_textField_5.setBounds(570, 280, 200, 25);
+		frmUstore.getContentPane().add(product_textField_5);
+		product_textField_5.setVisible(false);
+		
+		product_textField_6 = new JTextField();
+		product_textField_6.setColumns(10);
+		product_textField_6.setBounds(570, 320, 200, 25);
+		frmUstore.getContentPane().add(product_textField_6);
+		product_textField_6.setVisible(false);
+		
+		product_textField_7 = new JTextField();
+		product_textField_7.setColumns(10);
+		product_textField_7.setBounds(570, 360, 200, 25);
+		frmUstore.getContentPane().add(product_textField_7);
+		product_textField_7.setVisible(false);
+		
+		product_textField_8 = new JTextField();
+		product_textField_8.setColumns(10);
+		product_textField_8.setBounds(570, 400, 200, 25);
+		frmUstore.getContentPane().add(product_textField_8);
+		product_textField_8.setVisible(false);
+		
 		//To button pou otan patietai tha dhmiourgei ena neo proion
 		new_product_button = new JButton("ΔΗΜΙΟΥΡΓΙΑ");
 		new_product_button.setBackground(new Color(30, 144, 255));
@@ -369,15 +478,41 @@ public class MainFrame {
 		//To label pou tha emfanizetai otan ena neo proion dhmiourgithei me epityxia
 		new_product_label_done = new JLabel("\u2713 Η δημιουργία νέου προϊόντος έγινε με επιτυχία!");
 		new_product_label_done.setFont(new Font("Arial", Font.PLAIN, 16));
-		new_product_label_done.setBounds(480, 480, 350, 25);
+		new_product_label_done.setBounds(440, 480, 350, 25);
 		new_product_label_done.setForeground(Color.GREEN);
 		frmUstore.getContentPane().add(new_product_label_done);
 		new_product_label_done.setVisible(false);
 		
+		//To label pou tha emfanizetai otan ena neo proion dhmiourgithei me epityxia
+		edit_product_label_done = new JLabel("\u2713 Η επεξεργασία του προϊόντος έγινε με επιτυχία!");
+		edit_product_label_done.setFont(new Font("Arial", Font.PLAIN, 16));
+		edit_product_label_done.setBounds(440, 520, 350, 25);
+		edit_product_label_done.setForeground(Color.GREEN);
+		frmUstore.getContentPane().add(edit_product_label_done);
+		edit_product_label_done.setVisible(false);
+		
+		//To button pou tha pataei o xrhsths gia na epexergastei ena stoixeio
+		edit_btn = new JButton("ΕΠΕΞΕΡΓΑΣΙΑ");
+		edit_btn.setBackground(new Color(30, 144, 255));
+		edit_btn.setForeground(Color.white);
+		edit_btn.setFont(new Font("Arial", Font.PLAIN, 12));
+		edit_btn.setBounds(500, 490, 150, 25);
+		frmUstore.getContentPane().add(edit_btn);
+		edit_btn.setVisible(false);
+		
+		//To button pou tha pataei o xrhsths gia na epexergastei ena stoixeio
+		edit_btn_2 = new JButton("ΕΠΕΞΕΡΓΑΣΙΑ");
+		edit_btn_2.setBackground(new Color(30, 144, 255));
+		edit_btn_2.setForeground(Color.white);
+		edit_btn_2.setFont(new Font("Arial", Font.PLAIN, 12));
+		edit_btn_2.setBounds(500, 490, 150, 25);
+		frmUstore.getContentPane().add(edit_btn_2);
+		edit_btn_2.setVisible(false);
+		
 		//To label pou tha emfanizetai ta apotelesmata ths anazitisis
 		label_result = new JLabel("Done");
 		label_result.setFont(new Font("Arial", Font.PLAIN, 12));
-		label_result.setBounds(480, 480, 350, 25);
+		label_result.setBounds(480, 350, 350, 25);
 		frmUstore.getContentPane().add(label_result);
 		label_result.setVisible(false);
 		
@@ -441,105 +576,47 @@ public class MainFrame {
 							label_task_1.setVisible(true);
 							separator_2.setVisible(true);
 							
-							//Akolouthoun ta labels pou tha exoun ta textfields stin dhmiourgia neou proiontos
-							new_product_label_1 = new JLabel("Τίτλος");
-							new_product_label_1.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_1.setBounds(450, 120, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_1);
+							product_label_1.setVisible(true);
+							product_label_2.setVisible(true);
+							product_label_3.setVisible(true);
+							product_label_4.setVisible(true);
+							product_label_5.setVisible(true);
+							product_label_6.setVisible(true);
+							product_label_7.setVisible(true);
 							
-							new_product_label_2 = new JLabel("Barcode");
-							new_product_label_2.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_2.setBounds(450, 160, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_2);
-							
-							new_product_label_3 = new JLabel("Κατηγορία");
-							new_product_label_3.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_3.setBounds(450, 200, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_3);
-							
-							new_product_label_4 = new JLabel("Υποκατηγορία");
-							new_product_label_4.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_4.setBounds(450, 240, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_4);
-							
-							new_product_label_5 = new JLabel("Τιμή");
-							new_product_label_5.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_5.setBounds(450, 280, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_5);
-							
-							new_product_label_6 = new JLabel("Φ.Π.Α.");
-							new_product_label_6.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_6.setBounds(450, 320, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_6);
-							
-							new_product_label_7 = new JLabel("Ποσότητα");
-							new_product_label_7.setFont(new Font("Arial", Font.PLAIN, 15));
-							new_product_label_7.setBounds(450, 360, 100, 25);
-							frmUstore.getContentPane().add(new_product_label_7);
-							
-							//Akolouthoun ta textfileds opou o administrator grafei tis times tou kathe textfield
-							//sthn dhmiourgia neou proiontos
-							new_product_textField_1 = new JTextField();
-							new_product_textField_1.setColumns(10);
-							new_product_textField_1.setBounds(570, 120, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_1);
-							
-							new_product_textField_2 = new JTextField();
-							new_product_textField_2.setColumns(10);
-							new_product_textField_2.setBounds(570, 160, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_2);
-							
-							new_product_textField_3 = new JTextField();
-							new_product_textField_3.setColumns(10);
-							new_product_textField_3.setBounds(570, 200, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_3);
-							
-							new_product_textField_4 = new JTextField();
-							new_product_textField_4.setColumns(10);
-							new_product_textField_4.setBounds(570, 240, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_4);
-							
-							new_product_textField_5 = new JTextField();
-							new_product_textField_5.setColumns(10);
-							new_product_textField_5.setBounds(570, 280, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_5);
-							
-							new_product_textField_6 = new JTextField();
-							new_product_textField_6.setColumns(10);
-							new_product_textField_6.setBounds(570, 320, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_6);
-							//new_product_textField_6.setHorizontalAlignment(JTextField.RIGHT);
-							
-							new_product_textField_7 = new JTextField();
-							new_product_textField_7.setColumns(10);
-							new_product_textField_7.setBounds(570, 360, 200, 25);
-							frmUstore.getContentPane().add(new_product_textField_7);
+							product_textField_1.setVisible(true);
+							product_textField_2.setVisible(true);
+							product_textField_3.setVisible(true);
+							product_textField_4.setVisible(true);
+							product_textField_5.setVisible(true);
+							product_textField_6.setVisible(true);
+							product_textField_7.setVisible(true);
 							
 							//Akolouthei o kwdikas pou ektelei ti symvainei otan patithei to button dhmiourgias
 							new_product_button.setVisible(true);
 							new_product_button.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent e) {
-									if (new_product_textField_1.getText().trim().equals("") 
-											&& new_product_textField_1.getText() != null ) {
+									if (product_textField_1.getText().trim().equals("") 
+											&& product_textField_1.getText() != null ) {
 										System.out.println("ERROR");
-									} else if (new_product_textField_2.getText().trim().equals("") 
-											&& new_product_textField_2.getText() != null ) {
+									} else if (product_textField_2.getText().trim().equals("") 
+											&& product_textField_2.getText() != null ) {
 										System.out.println("ERROR2");
-									} else if (new_product_textField_3.getText().trim().equals("") 
-											&& new_product_textField_3.getText() != null ) {
+									} else if (product_textField_3.getText().trim().equals("") 
+											&& product_textField_3.getText() != null ) {
 										System.out.println("ERROR3");
-									} else if (new_product_textField_4.getText().trim().equals("") 
-											&& new_product_textField_4.getText() != null ) {
+									} else if (product_textField_4.getText().trim().equals("") 
+											&& product_textField_4.getText() != null ) {
 										System.out.println("ERROR4");
-									} else if (new_product_textField_5.getText().trim().equals("") 
-											&& new_product_textField_5.getText() != null ) {
+									} else if (product_textField_5.getText().trim().equals("") 
+											&& product_textField_5.getText() != null ) {
 										System.out.println("ERROR5");
-									} else if (new_product_textField_6.getText().trim().equals("") 
-											&& new_product_textField_6.getText() != null ) {
+									} else if (product_textField_6.getText().trim().equals("") 
+											&& product_textField_6.getText() != null ) {
 										System.out.println("ERROR6");
-									} else if (new_product_textField_7.getText().trim().equals("") 
-											&& new_product_textField_7.getText() != null ) {
+									} else if (product_textField_7.getText().trim().equals("") 
+											&& product_textField_7.getText() != null ) {
 										System.out.println("ERROR7");
 									} else {
 										addNewProduct();
@@ -549,13 +626,7 @@ public class MainFrame {
 							});
 							
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
 									button_1.setVisible(true);
@@ -576,20 +647,20 @@ public class MainFrame {
 									label_5.setVisible(true);
 									label_52.setVisible(true);
 									label_53.setVisible(true);
-									new_product_label_1.setVisible(false);
-									new_product_label_2.setVisible(false);
-									new_product_label_3.setVisible(false);
-									new_product_label_4.setVisible(false);
-									new_product_label_5.setVisible(false);
-									new_product_label_6.setVisible(false);
-									new_product_label_7.setVisible(false);
-									new_product_textField_1.setVisible(false);
-									new_product_textField_2.setVisible(false);
-									new_product_textField_3.setVisible(false);
-									new_product_textField_4.setVisible(false);
-									new_product_textField_5.setVisible(false);
-									new_product_textField_6.setVisible(false);
-									new_product_textField_7.setVisible(false);
+									product_label_1.setVisible(false);
+									product_label_2.setVisible(false);
+									product_label_3.setVisible(false);
+									product_label_4.setVisible(false);
+									product_label_5.setVisible(false);
+									product_label_6.setVisible(false);
+									product_label_7.setVisible(false);
+									product_textField_1.setVisible(false);
+									product_textField_2.setVisible(false);
+									product_textField_3.setVisible(false);
+									product_textField_4.setVisible(false);
+									product_textField_5.setVisible(false);
+									product_textField_6.setVisible(false);
+									product_textField_7.setVisible(false);
 									button_02.setVisible(false);
 									label_task_1.setVisible(false);
 									separator_2.setVisible(false);
@@ -641,13 +712,7 @@ public class MainFrame {
 							frmUstore.getContentPane().add(table);
 
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
 									button_1.setVisible(true);
@@ -717,15 +782,66 @@ public class MainFrame {
 							table.setFont(new Font("Arial", Font.PLAIN, 12));
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
-
+							
+							edit_btn.setVisible(true);
+							edit_btn.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									table.setVisible(false);
+									product_label_1.setVisible(true);
+									product_label_2.setVisible(true);
+									product_label_3.setVisible(true);
+									product_label_4.setVisible(true);
+									product_label_5.setVisible(true);
+									product_label_6.setVisible(true);
+									product_label_7.setVisible(true);
+									product_label_8.setVisible(true);
+									product_textField_1.setVisible(true);
+									product_textField_2.setVisible(true);
+									product_textField_3.setVisible(true);
+									product_textField_4.setVisible(true);
+									product_textField_5.setVisible(true);
+									product_textField_6.setVisible(true);
+									product_textField_7.setVisible(true);
+									product_textField_8.setVisible(true);
+									
+									//Akolouthei o kwdikas pou ektelei ti symvainei otan patithei to button epexergasias
+									edit_btn_2.setVisible(true);
+									edit_btn_2.addActionListener(new ActionListener() {
+										@Override
+										public void actionPerformed(ActionEvent e) {
+											if (product_textField_1.getText().trim().equals("") 
+													&& product_textField_1.getText() != null ) {
+												System.out.println("ERROR");
+											} else if (product_textField_2.getText().trim().equals("") 
+													&& product_textField_2.getText() != null ) {
+												System.out.println("ERROR2");
+											} else if (product_textField_3.getText().trim().equals("") 
+													&& product_textField_3.getText() != null ) {
+												System.out.println("ERROR3");
+											} else if (product_textField_4.getText().trim().equals("") 
+													&& product_textField_4.getText() != null ) {
+												System.out.println("ERROR4");
+											} else if (product_textField_5.getText().trim().equals("") 
+													&& product_textField_5.getText() != null ) {
+												System.out.println("ERROR5");
+											} else if (product_textField_6.getText().trim().equals("") 
+													&& product_textField_6.getText() != null ) {
+												System.out.println("ERROR6");
+											} else if (product_textField_7.getText().trim().equals("") 
+													&& product_textField_7.getText() != null ) {
+												System.out.println("ERROR7");
+											} else {
+												System.out.println("dddd");
+												editProduct();
+												edit_product_label_done.setVisible(true);
+											}
+										}
+									});
+								}
+							});
+							
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
 									button_1.setVisible(true);
@@ -750,6 +866,24 @@ public class MainFrame {
 									label_task_3.setVisible(false);
 									separator_2.setVisible(false);
 									table.setVisible(false);
+									edit_btn.setVisible(false);
+									product_label_1.setVisible(false);
+									product_label_2.setVisible(false);
+									product_label_3.setVisible(false);
+									product_label_4.setVisible(false);
+									product_label_5.setVisible(false);
+									product_label_6.setVisible(false);
+									product_label_7.setVisible(false);
+									product_label_8.setVisible(false);
+									product_textField_1.setVisible(false);
+									product_textField_2.setVisible(false);
+									product_textField_3.setVisible(false);
+									product_textField_4.setVisible(false);
+									product_textField_5.setVisible(false);
+									product_textField_6.setVisible(false);
+									product_textField_7.setVisible(false);
+									product_textField_8.setVisible(false);
+									edit_btn_2.setVisible(false);
 								}
 							});
 						}
@@ -799,7 +933,7 @@ public class MainFrame {
 									ResultSet rs = null;
 									try {
 										Connection conn = connect.connect();
-										PreparedStatement ps = conn.prepareStatement("select * from products where search_textField()");
+										PreparedStatement ps = conn.prepareStatement("select * from products where title='search_textField()'");
 										rs = ps.executeQuery();
 
 										label_result.setVisible(true);
@@ -811,13 +945,7 @@ public class MainFrame {
 							});
 
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
 									button_1.setVisible(true);
@@ -843,6 +971,7 @@ public class MainFrame {
 									label_task_4.setVisible(false);
 									separator_2.setVisible(false);
 									search_textField.setVisible(false);
+									label_result.setVisible(false);
 								}
 							});
 						}
@@ -880,13 +1009,7 @@ public class MainFrame {
 							label_statistics.setVisible(true);
 
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
 									button_1.setVisible(true);
@@ -941,13 +1064,9 @@ public class MainFrame {
 					//Ektelesh an patithei to button provolhs apothematos
 					button_2.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
-							button_1.setVisible(false);
 							button_2.setVisible(false);
 							button_3.setVisible(false);
 							button_4.setVisible(false);
-							button_5.setVisible(false);
-							label_1.setVisible(false);
-							label_12.setVisible(false);
 							label_2.setVisible(false);
 							label_22.setVisible(false);
 							label_23.setVisible(false);
@@ -956,9 +1075,6 @@ public class MainFrame {
 							label_33.setVisible(false);
 							label_4.setVisible(false);
 							label_42.setVisible(false);
-							label_5.setVisible(false);
-							label_52.setVisible(false);
-							label_53.setVisible(false);
 							
 							label_task_2.setVisible(true);
 							separator_2.setVisible(true);
@@ -979,23 +1095,12 @@ public class MainFrame {
 							frmUstore.getContentPane().add(table);
 							
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
-									button_1.setVisible(true);
 									button_2.setVisible(true);
 									button_3.setVisible(true);
 									button_4.setVisible(true);
-									button_5.setVisible(true);
-									label_1.setVisible(true);
-									label_12.setVisible(true);
-									label_2.setVisible(true);
 									label_22.setVisible(true);
 									label_23.setVisible(true);
 									label_3.setVisible(true);
@@ -1003,9 +1108,6 @@ public class MainFrame {
 									label_33.setVisible(true);
 									label_4.setVisible(true);
 									label_42.setVisible(true);
-									label_5.setVisible(true);
-									label_52.setVisible(true);
-									label_53.setVisible(true);
 									button_02.setVisible(false);
 									label_task_2.setVisible(false);
 									separator_2.setVisible(false);
@@ -1018,13 +1120,9 @@ public class MainFrame {
 					//Ektelesh an patithei to button epexergasias apothematos
 					button_3.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
-							button_1.setVisible(false);
 							button_2.setVisible(false);
 							button_3.setVisible(false);
 							button_4.setVisible(false);
-							button_5.setVisible(false);
-							label_1.setVisible(false);
-							label_12.setVisible(false);
 							label_2.setVisible(false);
 							label_22.setVisible(false);
 							label_23.setVisible(false);
@@ -1033,9 +1131,6 @@ public class MainFrame {
 							label_33.setVisible(false);
 							label_4.setVisible(false);
 							label_42.setVisible(false);
-							label_5.setVisible(false);
-							label_52.setVisible(false);
-							label_53.setVisible(false);
 							
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
@@ -1057,22 +1152,12 @@ public class MainFrame {
 							frmUstore.getContentPane().add(table);
 							
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
-									button_1.setVisible(true);
 									button_2.setVisible(true);
 									button_3.setVisible(true);
 									button_4.setVisible(true);
-									button_5.setVisible(true);
-									label_1.setVisible(true);
-									label_12.setVisible(true);
 									label_2.setVisible(true);
 									label_22.setVisible(true);
 									label_23.setVisible(true);
@@ -1081,9 +1166,6 @@ public class MainFrame {
 									label_33.setVisible(true);
 									label_4.setVisible(true);
 									label_42.setVisible(true);
-									label_5.setVisible(true);
-									label_52.setVisible(true);
-									label_53.setVisible(true);
 									button_02.setVisible(false);
 									label_task_3.setVisible(false);
 									separator_2.setVisible(false);
@@ -1096,13 +1178,9 @@ public class MainFrame {
 					//Ektelesh an patithei to button anazitisis apothematos
 					button_4.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
-							button_1.setVisible(false);
 							button_2.setVisible(false);
 							button_3.setVisible(false);
 							button_4.setVisible(false);
-							button_5.setVisible(false);
-							label_1.setVisible(false);
-							label_12.setVisible(false);
 							label_2.setVisible(false);
 							label_22.setVisible(false);
 							label_23.setVisible(false);
@@ -1111,9 +1189,6 @@ public class MainFrame {
 							label_33.setVisible(false);
 							label_4.setVisible(false);
 							label_42.setVisible(false);
-							label_5.setVisible(false);
-							label_52.setVisible(false);
-							label_53.setVisible(false);
 							
 							label_task_4.setVisible(true);
 							separator_2.setVisible(true);
@@ -1133,22 +1208,12 @@ public class MainFrame {
 							frmUstore.getContentPane().add(search_btn);
 							
 							//Back button gia metavash sto arxiko menou
-							button_02 = new JButton("");
-							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
-							button_02.setBackground(Color.WHITE);
-							button_02.setBounds(51, 0, 50, 50);
-							frmUstore.getContentPane().add(button_02);
-							button_02.setMaximumSize(new Dimension(20, 20));
-							button_02.setFont(new Font("Arial", Font.PLAIN, 10));
+							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
-									button_1.setVisible(true);
 									button_2.setVisible(true);
 									button_3.setVisible(true);
 									button_4.setVisible(true);
-									button_5.setVisible(true);
-									label_1.setVisible(true);
-									label_12.setVisible(true);
 									label_2.setVisible(true);
 									label_22.setVisible(true);
 									label_23.setVisible(true);
@@ -1157,9 +1222,6 @@ public class MainFrame {
 									label_33.setVisible(true);
 									label_4.setVisible(true);
 									label_42.setVisible(true);
-									label_5.setVisible(true);
-									label_52.setVisible(true);
-									label_53.setVisible(true);
 									button_02.setVisible(false);
 									search_btn.setVisible(false);
 									label_task_4.setVisible(false);
@@ -1168,8 +1230,6 @@ public class MainFrame {
 								}
 							});
 						}});
-				} else {
-					label_conn_error.setVisible(true);
 				}
 			}
 		});
@@ -1190,7 +1250,7 @@ public class MainFrame {
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
 		label_10.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_10.setBackground(Color.DARK_GRAY);
-		label_10.setBounds(10, 555, 434, 14);
+		label_10.setBounds(10, 553, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
 	
@@ -1235,12 +1295,12 @@ public class MainFrame {
 							+ "VALUES (?,?,?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(query);
 
-			ps.setString(1, new_product_textField_1.getText() );
-			ps.setString(2, new_product_textField_2.getText() );
-			ps.setString(3, new_product_textField_3.getText() );
-			ps.setString(4, new_product_textField_4.getText() );
-			ps.setDouble(5, Double.parseDouble(new_product_textField_5.getText() ) );
-			ps.setInt(6, Integer.parseInt(new_product_textField_6.getText() ) );
+			ps.setString(1, product_textField_1.getText() );
+			ps.setString(2, product_textField_2.getText() );
+			ps.setString(3, product_textField_3.getText() );
+			ps.setString(4, product_textField_4.getText() );
+			ps.setDouble(5, Double.parseDouble(product_textField_5.getText() ) );
+			ps.setInt(6, Integer.parseInt(product_textField_6.getText() ) );
 			ps.setInt(7, Integer.parseInt( 220+"" ) );
 			ps.executeUpdate();
 
@@ -1252,6 +1312,32 @@ public class MainFrame {
 		
 	}
 	
+	//Synartisi gia thn epexergasia proiontos
+	public void editProduct() {
+		try {
+			Connection conn = connect.connect();
+			System.out.println("here");
+			String query = "UPDATE products SET title =?, barcode =?, category =?, subcategory =?, price =?, vat=?  quantity =? WHERE p_id =?";
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			ps.setString(1, product_textField_1.getText() );
+			ps.setString(2, product_textField_2.getText() );
+			ps.setString(3, product_textField_3.getText() );
+			ps.setString(4, product_textField_4.getText() );
+			ps.setDouble(5, Double.parseDouble(product_textField_5.getText() ) );
+			ps.setInt(6, Integer.parseInt(product_textField_6.getText() ) );
+			ps.setInt(7, Integer.parseInt( 220+"" ) );
+			ps.setString(8, product_textField_8.getText() );
+			
+			conn.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//synartisi anazitisis sto apothema
 	public void search_product() {	
 		try {
 			Connection conn = connect.connect();
@@ -1262,7 +1348,7 @@ public class MainFrame {
 			ps.executeUpdate();
 			
 			while ( ((ResultSet) ps).next() ) {
-				Object search_result = ((ResultSet) ps).getString("rights");
+				Object search_result = ((ResultSet) ps).getString("title");
 				
 				label_result.setText((String) search_result);
 			}

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 29 Ιαν 2016 στις 23:18:39
+-- Χρόνος δημιουργίας: 30 Ιαν 2016 στις 17:47:55
 -- Έκδοση διακομιστή: 5.6.24
 -- Έκδοση PHP: 5.6.8
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(10,2) NOT NULL,
   `vat` int(10) NOT NULL,
   `quantity` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `products`
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `e-mail` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(100) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `users`
@@ -79,7 +79,9 @@ INSERT INTO `users` (`u_id`, `username`, `password`, `name`, `surname`, `rights`
 (2, 'ritsakost', '98f41855dd0de7e94e1bee9b7ac5c5b7', 'Αγορίτσα', 'Κωστοπούλου', 'admin', 'ritsakostopoulou@hotmail.com', '6975757575', 'Καρδίτσα Καρδίτσας'),
 (3, 'georgekap', '2771517ee94e060cfee58a939c2c19b1', 'Γεώργιος', 'Κάπαϊ', 'admin', 'georgekapai@hotmail.com', '6976767676', 'Ακράτα Αχαΐας'),
 (4, 'pankar', '1a1dc91c907325c69271ddf0c944bc72', 'Παναγιώτα', 'Καραλή', 'user', 'pan_kar@hotmail.com', '6955555555', 'Αργος Αργολίδας'),
-(5, 'test', 'test', 'test', 'test', 'user', 'test@test.gr', '6987654321', 'test test');
+(5, 'test', '098f6bcd4621d373cade4e832627b4f6', 'test', 'test', 'user', 'test@test.gr', '6987654321', 'test test'),
+(6, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin@gmail.com', '6996699669', 'TEI PIR'),
+(7, 'user', 'user', 'user', 'user', 'user', 'user@gmail.com', '6996699669', 'TEI PIR');
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -105,12 +107,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT για πίνακα `products`
 --
 ALTER TABLE `products`
-  MODIFY `p_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+  MODIFY `p_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT για πίνακα `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `u_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

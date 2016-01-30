@@ -28,11 +28,10 @@ import java.util.Vector;
 	
 public class MainFrame {
 	
+	//Dhlwsh Metavlhtwn	
 	public String typeOfUser;
 	public String nameOfUser;
-	
-	private JTable table;
-		
+	private JTable table;		
 	private JTextField new_product_textField_1;
 	private JTextField new_product_textField_2;
 	private JTextField new_product_textField_3;
@@ -71,9 +70,10 @@ public class MainFrame {
 	private JLabel new_product_label_6;
 	private JLabel new_product_label_7;
 	private JLabel new_product_label_done;
+	private JLabel label_result;
 	private JLabel label_10;
 	private JLabel label_conn_error;
-	
+	private JLabel label_statistics;
 	private JButton button_00;
 	private JButton button_1;
 	private JButton button_2;
@@ -83,12 +83,10 @@ public class MainFrame {
 	private JButton btnLogIn;
 	private JButton new_product_button;
 	private JButton button_02;
-	private JButton search_btn;
-	
+	private JButton search_btn;	
 	private JSeparator separator;
 	private JSeparator separator_2;
 	private JSeparator separator_3;
-	
 	private JFrame frmUstore;
 	private JTextField txtUsername;
 	private JPasswordField passwordField;
@@ -133,35 +131,42 @@ public class MainFrame {
 		frmUstore.getContentPane().setLayout(null);
 		frmUstore.setResizable(false);
 		
+		//To logo
 		lblUstore = new JLabel("uStore");
 		lblUstore.setFont(new Font("Arial", Font.PLAIN, 40));
 		lblUstore.setBounds(100, 60, 200, 60);
 		frmUstore.getContentPane().add(lblUstore);
 		
+		//To label username
 		lblUsername = new JLabel("Username");
 		lblUsername.setBounds(780, 120, 65, 20);
 		frmUstore.getContentPane().add(lblUsername);
 		
+		//To label password
 		lblPassword = new JLabel("Password");
 		lblPassword.setBounds(780, 160, 65, 20);
 		frmUstore.getContentPane().add(lblPassword);
 		
+		//To textfield username
 		txtUsername = new JTextField();
 		txtUsername.setFont(new Font("Arial", Font.PLAIN, 12));
 		txtUsername.setBounds(860, 120, 130, 25);
 		frmUstore.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 		
+		//To textfield password
 		passwordField = new JPasswordField();
 		passwordField.setFont(new Font("Arial", Font.PLAIN, 12));
 		passwordField.setBounds(860, 160, 130, 25);
 		frmUstore.getContentPane().add(passwordField);
 		
+		//To label pou emfanizetai an yparxei lathos sthn syndesh mw thn vash
 		label_conn_error = new JLabel("Error!");
 		label_conn_error.setBounds(820, 250, 65, 20);
 		frmUstore.getContentPane().add(label_conn_error);
 		label_conn_error.setVisible(false);
 		
+		//Button me to logo
 		button_00 = new JButton("");
 		button_00.setFont(new Font("Arial", Font.PLAIN, 12));
 		button_00.setIcon(new ImageIcon("src\\icons\\logo.png"));
@@ -170,21 +175,25 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_00);
 		button_00.setVisible(false);
 
+		//Ena label poy emfanizei panw dexia sthn efarmogh to username tou xrhsth
 		label_0 = new JLabel("");
 		label_0.setFont(new Font("Arial", Font.BOLD, 12));
 		label_0.setBounds(1100, 20, 80, 15);
 		frmUstore.getContentPane().add(label_0);
 		
+		//Separator
 		separator = new JSeparator();
 		separator.setBounds(0, 51, 1200, 7);
 		frmUstore.getContentPane().add(separator);
 		separator.setVisible(false);
-		
+
+		//Separator
 		separator_2 = new JSeparator();
 		separator_2.setBounds(0, 85, 1500, 7);
 		frmUstore.getContentPane().add(separator_2);
 		separator_2.setVisible(false);
 		
+		//To button dhmiourgias neou proiontos
 		button_1 = new JButton("");
 		button_1.setIcon(new ImageIcon("src\\icons\\add.png"));
 		button_1.setBackground(Color.WHITE);
@@ -192,6 +201,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_1);
 		button_1.setVisible(false);
 		
+		//To button provolhs tou apothematos
 		button_2 = new JButton("");
 		button_2.setIcon(new ImageIcon("src\\icons\\screen.png"));
 		button_2.setBackground(Color.WHITE);
@@ -199,6 +209,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_2);
 		button_2.setVisible(false);
 
+		//To button epexergasias tou apothamatos
 		button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon("src\\icons\\edit.png"));
 		button_3.setBackground(Color.WHITE);
@@ -206,6 +217,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_3);
 		button_3.setVisible(false);
 
+		//To button anazhthshs sto apothema
 		button_4 = new JButton("");
 		button_4.setIcon(new ImageIcon("src\\icons\\search_1.png"));
 		button_4.setBackground(Color.WHITE);
@@ -213,12 +225,16 @@ public class MainFrame {
 		frmUstore.getContentPane().add(button_4);
 		button_4.setVisible(false);
 
+		//To button provolhw statistikwn stoixeiwn
 		button_5 = new JButton("");
 		button_5.setIcon(new ImageIcon("src\\icons\\statistics.png"));
 		button_5.setBackground(Color.WHITE);
 		button_5.setBounds(920, 180, 125, 125);
 		frmUstore.getContentPane().add(button_5);
 		button_5.setVisible(false);
+		
+		//Ta akoloutha labels einai ta labels pou tha vriskontai katw apo kathe button kai
+		//dhlwnoun ti kanei to kathe button
 		
 		label_1 = new JLabel("ƒ«Ã…œ’—√…¡");
 		label_1.setFont(new Font("Arial", Font.PLAIN, 15));
@@ -298,6 +314,9 @@ public class MainFrame {
 		frmUstore.getContentPane().add(label_53);
 		label_53.setVisible(false);
 		
+		//Kathe fora pou kapoios xrhsths tha pataei se kapoio button tha emfanizei ta akoloutha labels
+		//ta opoia dhlwnoun ti mporei na ginei sthn sygkekrimenh selida
+		
 		label_task_1 = new JLabel("ƒ«Ã…œ’—√…¡ Õ≈œ’ –—œ⁄œÕ‘œ”");
 		label_task_1.setBounds(10, 55, 500, 25);
 		label_task_1.setBackground(Color.DARK_GRAY);
@@ -338,6 +357,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(label_task_5);
 		label_task_5.setVisible(false);
 		
+		//To button pou otan patietai tha dhmiourgei ena neo proion
 		new_product_button = new JButton("ƒ«Ã…œ’—√…¡");
 		new_product_button.setBackground(new Color(30, 144, 255));
 		new_product_button.setForeground(Color.white);
@@ -346,6 +366,7 @@ public class MainFrame {
 		frmUstore.getContentPane().add(new_product_button);
 		new_product_button.setVisible(false);
 		
+		//To label pou tha emfanizetai otan ena neo proion dhmiourgithei me epityxia
 		new_product_label_done = new JLabel("\u2713 « ‰ÁÏÈÔıÒ„ﬂ· Ì›Ôı ÒÔ˙¸ÌÙÔÚ ›„ÈÌÂ ÏÂ ÂÈÙı˜ﬂ·!");
 		new_product_label_done.setFont(new Font("Arial", Font.PLAIN, 16));
 		new_product_label_done.setBounds(480, 480, 350, 25);
@@ -353,10 +374,19 @@ public class MainFrame {
 		frmUstore.getContentPane().add(new_product_label_done);
 		new_product_label_done.setVisible(false);
 		
+		//To label pou tha emfanizetai ta apotelesmata ths anazitisis
+		label_result = new JLabel("Done");
+		label_result.setFont(new Font("Arial", Font.PLAIN, 12));
+		label_result.setBounds(480, 480, 350, 25);
+		frmUstore.getContentPane().add(label_result);
+		label_result.setVisible(false);
+		
+		//To button pou yparxei otan anoigei h efarmogi kai patwntas to kanei thn syndesh
 		btnLogIn = new JButton("”’Õƒ≈”«");
 		btnLogIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				connectToDB(txtUsername.getText(), passwordField.getPassword());
+				//Elegxos an o xrhsths pou prospathei na syndethei einai typou administrator
 				if ( typeOfUser.equals("admin") ){
 					lblUstore.setVisible(false);
 					lblUsername.setVisible(false);
@@ -386,6 +416,7 @@ public class MainFrame {
 					label_52.setVisible(true);
 					label_53.setVisible(true);
 					
+					//Ektelesh an patithei to button dhmiourgias neou proiontos
 					button_1.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -410,6 +441,7 @@ public class MainFrame {
 							label_task_1.setVisible(true);
 							separator_2.setVisible(true);
 							
+							//Akolouthoun ta labels pou tha exoun ta textfields stin dhmiourgia neou proiontos
 							new_product_label_1 = new JLabel("‘ﬂÙÎÔÚ");
 							new_product_label_1.setFont(new Font("Arial", Font.PLAIN, 15));
 							new_product_label_1.setBounds(450, 120, 100, 25);
@@ -445,6 +477,8 @@ public class MainFrame {
 							new_product_label_7.setBounds(450, 360, 100, 25);
 							frmUstore.getContentPane().add(new_product_label_7);
 							
+							//Akolouthoun ta textfileds opou o administrator grafei tis times tou kathe textfield
+							//sthn dhmiourgia neou proiontos
 							new_product_textField_1 = new JTextField();
 							new_product_textField_1.setColumns(10);
 							new_product_textField_1.setBounds(570, 120, 200, 25);
@@ -481,6 +515,7 @@ public class MainFrame {
 							new_product_textField_7.setBounds(570, 360, 200, 25);
 							frmUstore.getContentPane().add(new_product_textField_7);
 							
+							//Akolouthei o kwdikas pou ektelei ti symvainei otan patithei to button dhmiourgias
 							new_product_button.setVisible(true);
 							new_product_button.addActionListener(new ActionListener() {
 								@Override
@@ -513,6 +548,7 @@ public class MainFrame {
 								}
 							});
 							
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -563,7 +599,8 @@ public class MainFrame {
 							});
 						}
 					});
-					
+
+					//Ektelesh an patithei to button provolhs apothematos
 					button_2.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -588,6 +625,7 @@ public class MainFrame {
 							label_task_2.setVisible(true);
 							separator_2.setVisible(true);
 							
+							//emfanish tou table me ta apothemata
 							try {
 								Connection conn = connect.connect();
 								PreparedStatement ps = conn.prepareStatement("select * from products");
@@ -601,7 +639,8 @@ public class MainFrame {
 							table.setFont(new Font("Arial", Font.PLAIN, 12));
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
-							
+
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -637,7 +676,8 @@ public class MainFrame {
 							});
 						}
 					});
-					
+
+					//Ektelesh an patithei to button epexergasias apothematos
 					button_3.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -662,7 +702,7 @@ public class MainFrame {
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
 							
-							//
+							//emfanish tou table me ta apothemata
 							ResultSet rs = null;
 							try {
 								Connection conn = connect.connect();
@@ -677,7 +717,8 @@ public class MainFrame {
 							table.setFont(new Font("Arial", Font.PLAIN, 12));
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
-							
+
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -713,7 +754,8 @@ public class MainFrame {
 							});
 						}
 					});
-					
+
+					//Ektelesh an patithei to button anazitisis sto apothema
 					button_4.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -738,18 +780,37 @@ public class MainFrame {
 							label_task_4.setVisible(true);
 							separator_2.setVisible(true);
 							
+							//To textfield opou o xrhsths tha pataei to keimeno pou thelei na anazitisei
 							search_textField = new JTextField();
 							search_textField.setColumns(10);
 							search_textField.setBounds(330, 180, 500, 40);
 							frmUstore.getContentPane().add(search_textField);
 							
+							//To button pou tha pataei o xrhsths gia na ektelestei h anazitisi
 							search_btn = new JButton("¡Õ¡∆«‘«”«");
 							search_btn.setBackground(new Color(30, 144, 255));
 							search_btn.setForeground(Color.white);
 							search_btn.setFont(new Font("Arial", Font.PLAIN, 12));
 							search_btn.setBounds(500, 250, 150, 25);
 							frmUstore.getContentPane().add(search_btn);
-							
+							search_btn.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									//emfanish twn apothematwn tis anazitisis
+									ResultSet rs = null;
+									try {
+										Connection conn = connect.connect();
+										PreparedStatement ps = conn.prepareStatement("select * from products where search_textField()");
+										rs = ps.executeQuery();
+
+										label_result.setVisible(true);
+										conn.close();
+									} catch (SQLException e1) {
+										e1.printStackTrace();
+									}
+								}
+							});
+
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -786,7 +847,8 @@ public class MainFrame {
 							});
 						}
 					});
-					
+
+					//Ektelesh an patithei to button provolh statistikwn stoixeiwn
 					button_5.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -811,6 +873,13 @@ public class MainFrame {
 							label_task_5.setVisible(true);
 							separator_2.setVisible(true);
 							
+							label_statistics = new JLabel("¡ıÙﬁ Á ÎÂÈÙÔıÒ„ﬂ· Ë· ÂﬂÌ·È ‰È·Ë›ÛÈÏÁ ÛÂ Ì›· ·Ì·‚‹ËÏÈÛÁ ÙÔı ÛıÛÙﬁÏ·ÙÔÚ!");
+							label_statistics.setFont(new Font("Arial", Font.PLAIN, 18));
+							label_statistics.setBounds(300, 250, 700, 70);
+							frmUstore.getContentPane().add(label_statistics);
+							label_statistics.setVisible(true);
+
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -841,10 +910,12 @@ public class MainFrame {
 									button_02.setVisible(false);
 									label_task_5.setVisible(false);
 									separator_2.setVisible(false);
+									label_statistics.setVisible(false);
 								}
 							});
 						}
 					});
+					//Elegxos an o xrhsths pou prospathei na syndethei einai typou user
 				} else if ( typeOfUser.equals("user") ){
 					lblUstore.setVisible(false);
 					lblUsername.setVisible(false);
@@ -855,13 +926,9 @@ public class MainFrame {
 					button_00.setVisible(true);
 					label_0.setVisible(true);
 					separator.setVisible(true);
-					button_1.setVisible(true);
 					button_2.setVisible(true);
 					button_3.setVisible(true);
 					button_4.setVisible(true);
-					button_5.setVisible(true);
-					label_1.setVisible(true);
-					label_12.setVisible(true);
 					label_2.setVisible(true);
 					label_22.setVisible(true);
 					label_23.setVisible(true);
@@ -870,10 +937,8 @@ public class MainFrame {
 					label_33.setVisible(true);
 					label_4.setVisible(true);
 					label_42.setVisible(true);
-					label_5.setVisible(true);
-					label_52.setVisible(true);
-					label_53.setVisible(true);
 					
+					//Ektelesh an patithei to button provolhs apothematos
 					button_2.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -898,6 +963,7 @@ public class MainFrame {
 							label_task_2.setVisible(true);
 							separator_2.setVisible(true);
 							
+							//o pinakas pou tha emfanizei to apothema
 							try {
 								Connection conn = connect.connect();
 								PreparedStatement ps = conn.prepareStatement("select * from products");
@@ -912,6 +978,7 @@ public class MainFrame {
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
 							
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -948,6 +1015,7 @@ public class MainFrame {
 						}
 					});
 					
+					//Ektelesh an patithei to button epexergasias apothematos
 					button_3.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -972,7 +1040,7 @@ public class MainFrame {
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
 							
-							//
+							//o pinakas me to apothema
 							ResultSet rs = null;
 							try {
 								Connection conn = connect.connect();
@@ -988,6 +1056,7 @@ public class MainFrame {
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
 							
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -1024,6 +1093,7 @@ public class MainFrame {
 						}
 					});
 					
+					//Ektelesh an patithei to button anazitisis apothematos
 					button_4.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
 							button_1.setVisible(false);
@@ -1048,11 +1118,13 @@ public class MainFrame {
 							label_task_4.setVisible(true);
 							separator_2.setVisible(true);
 							
+							//To textfield opou o xrhsths tha grafei to keimeno pou thelei na anazitisei
 							search_textField = new JTextField();
 							search_textField.setColumns(10);
 							search_textField.setBounds(330, 180, 500, 40);
 							frmUstore.getContentPane().add(search_textField);
 							
+							//To button pou an patithei tha ektelei thn anazitisi
 							search_btn = new JButton("¡Õ¡∆«‘«”«");
 							search_btn.setBackground(new Color(30, 144, 255));
 							search_btn.setForeground(Color.white);
@@ -1060,6 +1132,7 @@ public class MainFrame {
 							search_btn.setBounds(500, 250, 150, 25);
 							frmUstore.getContentPane().add(search_btn);
 							
+							//Back button gia metavash sto arxiko menou
 							button_02 = new JButton("");
 							button_02.setIcon(new ImageIcon("src\\icons\\back.png"));
 							button_02.setBackground(Color.WHITE);
@@ -1094,8 +1167,7 @@ public class MainFrame {
 									search_textField.setVisible(false);
 								}
 							});
-						}
-					});
+						}});
 				} else {
 					label_conn_error.setVisible(true);
 				}
@@ -1107,19 +1179,22 @@ public class MainFrame {
 		btnLogIn.setBounds(875, 200, 90, 25);
 		frmUstore.getContentPane().add(btnLogIn);
 		
+		//seperator
 		separator_3 = new JSeparator();
 		separator_3.setBounds(0, 550, 1200, 7);
 		frmUstore.getContentPane().add(separator_3);
 
+		//Label me to copyright tis etairias pou diaxeirizetai to logismiko
 		label_10 = new JLabel("\u00a9 Copyright uStore A.E. 2015");
 		label_10.setHorizontalTextPosition(SwingConstants.LEFT);
 		label_10.setHorizontalAlignment(SwingConstants.LEFT);
-		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
+		label_10.setFont(new Font("Arial", Font.PLAIN, 12));
 		label_10.setBackground(Color.DARK_GRAY);
 		label_10.setBounds(10, 555, 434, 14);
 		frmUstore.getContentPane().add(label_10);
 	}
 	
+	//Synartisi gia syndesh me thn vash twn user
 	private void connectToDB( String username, char[] cs ) {
 		String passText = new String( cs );
 
@@ -1130,15 +1205,17 @@ public class MainFrame {
 
 			ps.setString(1, username);
 			ps.setString(2, passText);
-			
-			ResultSet rs = ps.executeQuery();
 
+			ResultSet rs = ps.executeQuery();
+			//Gia na emfanizei to label me to username tou xrhsth
 			while ( rs.next() ) {
+				
 					typeOfUser = rs.getString("rights");
 					nameOfUser = rs.getString("username");
 					
 					label_0.setText(nameOfUser);
 					label_0.setVisible(true);
+					
 			}
 			conn.close();
 			
@@ -1148,8 +1225,8 @@ public class MainFrame {
 		
 	}
 
+	//Synartisi gia thn dimiourgia neou proiontos
 	public void addNewProduct() {
-		
 		try {
 			Connection conn = connect.connect();
 			String query = "INSERT INTO `products`"
@@ -1175,6 +1252,30 @@ public class MainFrame {
 		
 	}
 	
+	public void search_product() {	
+		try {
+			Connection conn = connect.connect();
+			String query = "SELECT * FROM `products` WHERE  VALUES (?)";
+			PreparedStatement ps = conn.prepareStatement(query);
+			
+			ps.setString(1, search_textField.getText() );
+			ps.executeUpdate();
+			
+			while ( ((ResultSet) ps).next() ) {
+				Object search_result = ((ResultSet) ps).getString("rights");
+				
+				label_result.setText((String) search_result);
+			}
+
+			conn.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//Synartisi tou pinaka, opou pairnei to periexomeno tou pinaka pou vrisketai sthn vash
 	public static DefaultTableModel buildTableModel(ResultSet rs)
 	        throws SQLException {
 

@@ -1120,9 +1120,13 @@ public class MainFrame {
 					//Ektelesh an patithei to button epexergasias apothematos
 					button_3.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
+							button_1.setVisible(false);
 							button_2.setVisible(false);
 							button_3.setVisible(false);
 							button_4.setVisible(false);
+							button_5.setVisible(false);
+							label_1.setVisible(false);
+							label_12.setVisible(false);
 							label_2.setVisible(false);
 							label_22.setVisible(false);
 							label_23.setVisible(false);
@@ -1131,11 +1135,14 @@ public class MainFrame {
 							label_33.setVisible(false);
 							label_4.setVisible(false);
 							label_42.setVisible(false);
+							label_5.setVisible(false);
+							label_52.setVisible(false);
+							label_53.setVisible(false);
 							
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
 							
-							//o pinakas me to apothema
+							//emfanish tou table me ta apothemata
 							ResultSet rs = null;
 							try {
 								Connection conn = connect.connect();
@@ -1151,13 +1158,74 @@ public class MainFrame {
 							table.setBounds(180, 130, 800, 300);
 							frmUstore.getContentPane().add(table);
 							
+							edit_btn.setVisible(true);
+							edit_btn.addActionListener(new ActionListener(){
+								public void actionPerformed(ActionEvent e){
+									table.setVisible(false);
+									product_label_1.setVisible(true);
+									product_label_2.setVisible(true);
+									product_label_3.setVisible(true);
+									product_label_4.setVisible(true);
+									product_label_5.setVisible(true);
+									product_label_6.setVisible(true);
+									product_label_7.setVisible(true);
+									product_label_8.setVisible(true);
+									product_textField_1.setVisible(true);
+									product_textField_2.setVisible(true);
+									product_textField_3.setVisible(true);
+									product_textField_4.setVisible(true);
+									product_textField_5.setVisible(true);
+									product_textField_6.setVisible(true);
+									product_textField_7.setVisible(true);
+									product_textField_8.setVisible(true);
+									
+									//Akolouthei o kwdikas pou ektelei ti symvainei otan patithei to button epexergasias
+									edit_btn_2.setVisible(true);
+									edit_btn_2.addActionListener(new ActionListener() {
+										@Override
+										public void actionPerformed(ActionEvent e) {
+											if (product_textField_1.getText().trim().equals("") 
+													&& product_textField_1.getText() != null ) {
+												System.out.println("ERROR");
+											} else if (product_textField_2.getText().trim().equals("") 
+													&& product_textField_2.getText() != null ) {
+												System.out.println("ERROR2");
+											} else if (product_textField_3.getText().trim().equals("") 
+													&& product_textField_3.getText() != null ) {
+												System.out.println("ERROR3");
+											} else if (product_textField_4.getText().trim().equals("") 
+													&& product_textField_4.getText() != null ) {
+												System.out.println("ERROR4");
+											} else if (product_textField_5.getText().trim().equals("") 
+													&& product_textField_5.getText() != null ) {
+												System.out.println("ERROR5");
+											} else if (product_textField_6.getText().trim().equals("") 
+													&& product_textField_6.getText() != null ) {
+												System.out.println("ERROR6");
+											} else if (product_textField_7.getText().trim().equals("") 
+													&& product_textField_7.getText() != null ) {
+												System.out.println("ERROR7");
+											} else {
+												System.out.println("dddd");
+												editProduct();
+												edit_product_label_done.setVisible(true);
+											}
+										}
+									});
+								}
+							});
+							
 							//Back button gia metavash sto arxiko menou
 							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
+									button_1.setVisible(true);
 									button_2.setVisible(true);
 									button_3.setVisible(true);
 									button_4.setVisible(true);
+									button_5.setVisible(true);
+									label_1.setVisible(true);
+									label_12.setVisible(true);
 									label_2.setVisible(true);
 									label_22.setVisible(true);
 									label_23.setVisible(true);
@@ -1166,10 +1234,31 @@ public class MainFrame {
 									label_33.setVisible(true);
 									label_4.setVisible(true);
 									label_42.setVisible(true);
+									label_5.setVisible(true);
+									label_52.setVisible(true);
+									label_53.setVisible(true);
 									button_02.setVisible(false);
 									label_task_3.setVisible(false);
 									separator_2.setVisible(false);
 									table.setVisible(false);
+									edit_btn.setVisible(false);
+									product_label_1.setVisible(false);
+									product_label_2.setVisible(false);
+									product_label_3.setVisible(false);
+									product_label_4.setVisible(false);
+									product_label_5.setVisible(false);
+									product_label_6.setVisible(false);
+									product_label_7.setVisible(false);
+									product_label_8.setVisible(false);
+									product_textField_1.setVisible(false);
+									product_textField_2.setVisible(false);
+									product_textField_3.setVisible(false);
+									product_textField_4.setVisible(false);
+									product_textField_5.setVisible(false);
+									product_textField_6.setVisible(false);
+									product_textField_7.setVisible(false);
+									product_textField_8.setVisible(false);
+									edit_btn_2.setVisible(false);
 								}
 							});
 						}

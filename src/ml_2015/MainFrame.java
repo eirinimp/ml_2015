@@ -1120,13 +1120,9 @@ public class MainFrame {
 					//Ektelesh an patithei to button epexergasias apothematos
 					button_3.addActionListener(new ActionListener(){
 						public void actionPerformed(ActionEvent e){
-							button_1.setVisible(false);
 							button_2.setVisible(false);
 							button_3.setVisible(false);
 							button_4.setVisible(false);
-							button_5.setVisible(false);
-							label_1.setVisible(false);
-							label_12.setVisible(false);
 							label_2.setVisible(false);
 							label_22.setVisible(false);
 							label_23.setVisible(false);
@@ -1135,9 +1131,6 @@ public class MainFrame {
 							label_33.setVisible(false);
 							label_4.setVisible(false);
 							label_42.setVisible(false);
-							label_5.setVisible(false);
-							label_52.setVisible(false);
-							label_53.setVisible(false);
 							
 							label_task_3.setVisible(true);
 							separator_2.setVisible(true);
@@ -1219,13 +1212,9 @@ public class MainFrame {
 							button_02.setVisible(true);
 							button_02.addActionListener(new ActionListener(){
 								public void actionPerformed(ActionEvent e){
-									button_1.setVisible(true);
 									button_2.setVisible(true);
 									button_3.setVisible(true);
 									button_4.setVisible(true);
-									button_5.setVisible(true);
-									label_1.setVisible(true);
-									label_12.setVisible(true);
 									label_2.setVisible(true);
 									label_22.setVisible(true);
 									label_23.setVisible(true);
@@ -1234,9 +1223,6 @@ public class MainFrame {
 									label_33.setVisible(true);
 									label_4.setVisible(true);
 									label_42.setVisible(true);
-									label_5.setVisible(true);
-									label_52.setVisible(true);
-									label_53.setVisible(true);
 									button_02.setVisible(false);
 									label_task_3.setVisible(false);
 									separator_2.setVisible(false);
